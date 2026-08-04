@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const PlusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -15,15 +16,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="es"
-      className={`${PlusJakarta.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" className={`${PlusJakarta.variable} h-full antialiased`}>
+      <body className="bg-background">
+        
+        <div className="min-h-screen bg-hero-gradient">
+          <Navbar />
+          <main className="w-full px-6 md:px-10 lg:px-28 xl:px-35 2xl:px-50">
+            {children}
+          </main>
+        </div>
+
+      </body>
     </html>
   );
 }

@@ -9,9 +9,9 @@ import { ArrowDownToLine, ArrowUpRight, Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Blog", href: "/blog" },
   { name: "Sobre mí", href: "/sobre-mi" },
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Blog", href: "/blog" }
 ];
 
 const customShadow = "shadow-[0_2px_4.3px_0_rgba(107,107,107,0.15)]";
@@ -49,10 +49,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-8 left-0 right-0 z-50 w-full px-5 md:px-10 xl:px-30 2xl:px-63.75">
+    <header className="fixed top-8 left-0 right-0 z-50 w-full px-5 md:px-8 xl:px-30 2xl:px-48 lg:px-26">
       <nav
         aria-label="Navegación principal"
-        className="relative flex items-center justify-between bg-white/70 backdrop-blur-[13.2px] rounded-2xl py-4 px-5 lg:py-6 lg:px-8"
+        className="relative flex items-center justify-between bg-white/70 backdrop-blur-[15px] rounded-2xl py-4 px-5 lg:py-6 lg:px-8"
       >
         {/* Logo */}
         <Link 
@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* Botones Desktop */}
             <div className="hidden md:flex items-center gap-4">
               <button 
-                className={`flex items-center justify-center py-2.5 px-4 bg-white border border-gray-200 rounded-xs hover:bg-gray-50 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-black ${customShadow}`}
+                className={`flex items-center justify-center cursor-pointer py-2.5 px-4 bg-white border border-gray-200 rounded-xs hover:bg-gray-50 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-black ${customShadow}`}
                 aria-label="Descargar CV (PDF)"
               >
                 <span className="text-[18px] font-normal">Descargar CV</span>
@@ -112,7 +112,7 @@ export default function Navbar() {
               </button>
 
               <button 
-                className={`flex items-center justify-center py-2.5 px-4 bg-black text-white rounded-xs hover:bg-gray-900 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white ${customShadow}`}
+                className={`flex items-center justify-center cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-gray-900 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white ${customShadow}`}
                 aria-label="Contactar con Sybella"
               >
                 <span className="text-[18px] font-normal">Hablemos</span>

@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    webpackMemoryOptimizations: true,
+    webpackBuildWorker: true,
+    optimizePackageImports: ['lucide-react'],
+  },
   reactCompiler: true,
 };
 
