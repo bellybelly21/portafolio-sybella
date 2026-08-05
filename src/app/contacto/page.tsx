@@ -59,8 +59,10 @@ export default function ContactPage() {
       // (Esto usa la API imperativa window.grecaptcha.execute)
       const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'contact_form' });
 
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
       // Enviar los datos y el token al back
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, token }),
