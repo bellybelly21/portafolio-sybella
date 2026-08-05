@@ -5,6 +5,10 @@ require('dotenv').config();
 
 const app = express();
 
+// Habilitar CORS para que frontend en Vercel pueda comunicarse con Express
+app.use(cors());
+app.use(express.json());
+
 // Middlewares
 app.use(express.json());
 app.use(cors());

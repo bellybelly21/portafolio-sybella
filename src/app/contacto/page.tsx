@@ -61,6 +61,10 @@ export default function ContactPage() {
 
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
+      const API_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://portafolio-sybella-production.up.railway.app'
+  : 'http://localhost:5000';
+
       // Enviar los datos y el token al back
       const res = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
