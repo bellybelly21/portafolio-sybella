@@ -113,7 +113,7 @@ export default function Navbar() {
 
               <button 
                 className={`flex items-center justify-center cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-gray-900 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white ${customShadow}`}
-                aria-label="Contactar con Sybella"
+                aria-label="Contactar con Sybella" onClick={() => window.location.href = './contacto'}
               >
                 <span className="text-[18px] font-normal">Hablemos</span>
                 <ArrowUpRight size={18} strokeWidth={2} className="ml-2" aria-hidden="true" />
@@ -181,7 +181,7 @@ export default function Navbar() {
             </button>
             <button 
               className={`flex items-center justify-center w-full py-3.5 bg-black text-white rounded-xl focus:outline-2 focus:outline-offset-2 focus:outline-white ${customShadow}`}
-              aria-label="Contactar con Sybella"
+              aria-label="Contactar con Sybella" onClick={() => window.location.href = './contacto'}
             >
               <span className="text-sm font-medium">Hablemos</span>
               <ArrowUpRight size={18} className="ml-2" aria-hidden="true" />
