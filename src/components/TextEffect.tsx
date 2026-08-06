@@ -31,12 +31,12 @@ export default function HeroName() {
       </span>
       
       <span className="relative inline-block w-full pb-4 md:pb-14">
-        <span className="text-black font-bold text-[clamp(3rem,9.1vw,16rem)] leading-[1.26] relative z-10 block text-center md:text-left">
+        <span className="text-black font-bold text-[clamp(3rem,9vw,16rem)] leading-[1.26] relative z-10 block text-center md:text-left">
           Sybella Sandoval
         </span>
 
         <span 
-          className="text-effect font-bold text-[clamp(3rem,9.1vw,16rem)] leading-[1.26] absolute left-0 right-0 z-0 text-center md:text-left transition-transform duration-150 ease-out"
+          className="text-effect font-bold text-[clamp(3rem,9vw,16rem)] leading-[1.26] absolute left-0 right-0 z-0 text-center md:text-left transition-transform duration-150 ease-out"
           style={{
             transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
           }}
