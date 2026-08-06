@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 ::selection {
   background-color: #0F0E0E !important;
   color: #FFFFFF !important;
@@ -16,7 +20,7 @@
   --color-black: #0F0E0E;
   --color-gray: #373737;
   --color-whitegray: #C2C2C2;
-  --color-background: #F4F2F8;
+  --color-background: #F5F5F5;
 }
 
 @layer utilities {

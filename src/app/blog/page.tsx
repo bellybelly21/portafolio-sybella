@@ -55,7 +55,7 @@ export default function BlogPage() {
                   <h2 className="text-xl md:text-2xl font-bold text-black group-hover:text-neutral-600 transition-colors mb-3 leading-snug">
                     {post.title}
                   </h2>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-gray mb-2 block">
+                  <span className="text-xs font-semibold uppercase text-gray mb-2 block">
                     ARTÍCULO - {formattedDate}
                   </span>
                   <p className="text-gray text-base leading-relaxed line-clamp-2">

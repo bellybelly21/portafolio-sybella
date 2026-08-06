@@ -17,7 +17,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       
       {/* Section herobanner */}
-      <section className="w-full flex flex-col justify-around pt-35 md:pt-35 lg:pt-36 xl:pt-35 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50 pb-30">
+      <section className="bg-hero-gradient w-full flex flex-col justify-around pt-35 md:pt-35 lg:pt-36 xl:pt-35 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50 pb-30">
         <TextEffect />
         <HeroDetails />
       </section>
@@ -33,7 +33,7 @@ export default function Home() {
                 Detrás de cada interfaz hay una historia de resolución de problemas. Conoce mi proceso de trabajo aquí.
               </p>
             </div>
-            <button className="mt-6 xl:mt-0 cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-gray-900 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white shadow-[0_2px_4.3px_0_rgba(107,107,107,0.15)]">
+            <button className="mt-6 xl:mt-0 cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-neutral-800  transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white shadow-[0_2px_4.3px_0_rgba(107,107,107,0.15)]">
               Explorar más proyectos
             </button>
           </div>
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
       <Link 
         href="/blog" 
-        className="mt-6 xl:mt-0 cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-gray-900 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white shadow-[0_2px_4.3px_0_rgba(107,107,107,0.15)] inline-block text-center"
+        className="mt-6 xl:mt-0 cursor-pointer py-2.5 px-4 bg-black text-white rounded-xs hover:bg-neutral-800  transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-white shadow-[0_2px_4.3px_0_rgba(107,107,107,0.15)] inline-block text-center"
       >
         Ir al Blog
       </Link>
@@ -130,7 +130,7 @@ export default function Home() {
                 <h2 className="text-xl md:text-2xl font-bold text-black group-hover:text-gray transition-colors mb-3 leading-snug">
                   {post.title}
                 </h2>
-                <span className="text-xs font-semibold uppercase tracking-widest text-gray mb-2 block">
+                <span className="text-xs font-semibold uppercase text-gray mb-2 block">
                   ARTÍCULO - {formattedDate}
                 </span>
                 <p className="text-gray text-base leading-relaxed line-clamp-2">

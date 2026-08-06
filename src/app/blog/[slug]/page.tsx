@@ -120,14 +120,14 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <div className="mx-auto flex flex-col items-start mb-12">
           
-        <span className="text-xs md:text-sm font-semibold uppercase tracking-widest text-gray mb-4 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
+        <span className="text-xs md:text-sm font-semibold uppercase text-gray mb-4 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
             Artículo {formattedDate && `- `}
             {isoDate && (
               <time dateTime={isoDate}>{formattedDate}</time>
             )}
           </span>
 
-          <h1 className="font-bold text-black text-[clamp(2rem,9vw,4rem)] leading-[1.15] tracking-tight mb-6 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50" itemProp="headline">
+          <h1 className="font-bold text-black text-[clamp(2rem,9vw,4rem)] leading-[1.15] mb-6 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50" itemProp="headline">
             {post.meta.title}
           </h1>
 
