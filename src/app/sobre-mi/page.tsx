@@ -1,12 +1,22 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Sobre Mí | Experiencia y Trayectoria", 
+    title: "Sobre Mí", 
     description: "Conoce mi trayectoria como diseñadora UX/UI y frontend developer. Mis gustos personales, habilidades y proyecciones.",
   };
 
   
   export default function SobreMiPage() {
+    let currentYear = new Date().getFullYear();
+    const currentMonth = new Date(). getMonth();
+    const currentDay = new Date().getDate();
+    
+    if (currentMonth < 11 && currentDay < 21) {
+      currentYear -= 1; 
+    }
+
+    const edad = currentYear - 2001;
+
     return (
       <main className="bg-hero-gradient w-full min-h-screen flex flex-col justify-center pt-35 md:pt-35 lg:pt-36 xl:pt-40 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50 pb-30">
         
@@ -17,7 +27,7 @@ export const metadata: Metadata = {
   
         {/* Subtítulo h2 */}
         <h2 className="text-black font-bold text-[clamp(2rem,8vw,56px)] leading-tight mb-8 md:mb-12">
-          Hola, soy Sybella. 24 años, chilena.
+          Hola, soy Sybella. {edad} años, chilena.
         </h2>
   
         <section className="w-full max-w-5xl">
@@ -73,9 +83,9 @@ export const metadata: Metadata = {
           
           <div className="w-full lg:w-auto flex justify-center">
             <img 
-              src="/sobre-mi-foto.webp" 
+              src="/images/sobre-mi-foto.webp" 
               alt="Foto de perfil de Sybella Sandoval" 
-              className="w-full lg:w-67 h-auto lg:h-98.25 object-cover rounded-sm"
+              className="w-full lg:w-67 h-auto lg:h-98.25 object-cover rounded-sm  pointer-events-none"
             />
           </div>
         </div>

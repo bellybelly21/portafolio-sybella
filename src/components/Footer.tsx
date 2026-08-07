@@ -99,15 +99,15 @@ export default function Footer() {
         {/* Imagen en columna derecha (Desktop) */}
         <div className="hidden lg:flex lg:w-1/3 justify-end pt-8">
           <img 
-            src="torre-footer-portafolio.webp" 
+            src="/images/torre-footer-portafolio.webp" 
             alt="Torre de figuras decorativas" 
-            className="w-43.75 h-full object-cover rounded-lg" 
+            className="w-43.75 h-full object-cover rounded-lg  pointer-events-none" 
           />
         </div>
         
         {/* Imagen en mobile/tablet */}
         <div className="lg:hidden pb-0 flex justify-center">
-           <img src="torre-footer-portafolio.webp" alt="Sybella" className="w-43.75 h-auto rounded-lg" />
+           <img src="/images/torre-footer-portafolio.webp" alt="Sybella" className="w-43.75 h-auto rounded-lg pointer-events-none" />
         </div>
       </div>
     </footer>

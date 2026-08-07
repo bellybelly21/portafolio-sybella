@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ConstructionModal from "@/components/ConstructionModal";
 
 const PlusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
     template: "%s | Sybella Sandoval Soto",
   },
   description: "Portafolio profesional y blog de Sybella Sandoval Soto, especializada en desarrollo frontend, React, TypeScript y diseño de interfaces.",
-  metadataBase: new URL("https://portafolio-sybella.vercel.app"),
+  metadataBase: new URL("https://sybellasandoval.cl"),
   authors: [{ name: "Sybella Sandoval Soto" }],
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://portafolio-sybella.vercel.app",
+    url: "https://sybellasandoval.cl",
     siteName: "Sybella Sandoval Soto Portafolio",
   },
 };
@@ -30,10 +31,39 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Datos estructurados
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sybella Sandoval Soto",
+    jobTitle: "Frontend Developer & UX/UI Designer",
+    url: "https://sybellasandoval.cl",
+    knowsAbout: [
+      "React",
+      "TypeScript",
+      "Python",
+      "UX/UI Design",
+      "Tailwind CSS",
+      "Web Development",
+      "Frontend"
+    ],
+    alumniOf: "INACAP",
+    sameAs: [
+      "https://www.linkedin.com/in/sybellasandoval",
+      "https://github.com/bellybelly21"
+    ]
+  };
+
   return (
     <html lang="es" className={`${PlusJakarta.variable} h-full antialiased`}>
+      <head>
+        {/* Inyección de Schema JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="bg-background">
-        
         <div className="min-h-screen bg-hero-gradient">
           <Navbar />
           <main className="w-full">
@@ -41,6 +71,7 @@ export default function RootLayout({
           </main>
         </div>
         <Footer />
+        <ConstructionModal />
       </body>
     </html>
   );

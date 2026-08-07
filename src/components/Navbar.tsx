@@ -65,6 +65,7 @@ export default function Navbar() {
   <Image 
     src={logo} 
     alt="Logo Sybella Sandoval" 
+    draggable="false"
     width={82} 
     height={34} 
     priority

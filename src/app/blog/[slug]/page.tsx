@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const siteUrl = "https://portafolio-sybella.vercel.app";
+  const siteUrl = "https://sybellasandoval.cl";
   const postUrl = `${siteUrl}/blog/${slug}`;
   
   const rawImage = post.meta.coverImage || post.meta.thumbnail;
@@ -61,7 +61,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   if (!post) notFound();
 
-  const siteUrl = "https://portafolio-sybella.vercel.app";
+  const siteUrl = "https://sybellasandoval.cl";
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   // Formatear la fecha a formato ISO para los motores de búsqueda

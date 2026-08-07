@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Brush, SplinePointer, MonitorSmartphone, CodeXml, Target, LucideIcon } from "lucide-react";
+import { ChevronDown, Brush, SplinePointer, MonitorSmartphone, CodeXml, Target, LucideIcon, ArrowUpRight, Construction } from "lucide-react";
+import Link from "next/link";
 
 interface ProfileItem {
   id: number;
@@ -15,6 +16,7 @@ interface ProfileItem {
   projectTitle?: string;
   projectDescription?: string;
   projectImage?: string;
+  projectSlug?: string;
 }
 
 const profileItemsData: ProfileItem[] = [
@@ -26,9 +28,6 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Adobe Suite (Photoshop, Illustrator, Lightroom, InDesign, Premiere), CapCut, Figma, Canva.",
     whatIDoText: "Producción versátil de piezas digitales e impresas. Desde redes sociales, fotomontajes y videos/reels, hasta material corporativo como lanyards, cards de acceso, pendones, libros y autoadhesivos.",
     truthText: "Uso Figma para vectores y para hacer gráficas que podría hacer en Photoshop; es una herramienta que adoro por su versatilidad. Canva es mi mejor aliado para tender puentes con equipos de marketing cuando el flujo nativo de Adobe se complica. Los logos no son mi especialidad ni lo que más disfruto, pero puedo resolverlos cuando la ocasión lo exige.",
-    projectTitle: "Recopilación de gráficas para redes sociales",
-    projectDescription: "Una serie de gráficas hechas mientras trabajé en Arkenco, una agencia de marketing digital.",
-    projectImage: "/images/proyecto-arkenco-rrss.jpg",
   },
   {
     id: 2,
@@ -38,9 +37,6 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Figma (mi hogar), Adobe XD, Framer, Hotjar, Miro, Maze.",
     whatIDoText: "Diseño de sitios web, landing pages y apps móviles. Y algo de espionaje a empresas de la competencia (más llamado benchmarking).",
     truthText: "Me obsesiona el pixel-perfect, las grillas y el uso correcto de auto-layout. Todo sitio que diseño lo veo como un producto: debe ser usable, amable y accesible (siempre chequeo contrastes). Aunque el UX puro no es mi fuerte, me guío por estándares web probados que aseguran que el diseño no solo se vea bien, sino que funcione como debe.",
-    projectTitle: "Rediseño web de Clínica Puerta del Sol",
-    projectDescription: "Modernización del sitio web completo más flujo de agendar horas.",
-    projectImage: "/images/proyecto-uxui.jpg",
   },
   {
     id: 3,
@@ -52,7 +48,8 @@ const profileItemsData: ProfileItem[] = [
     truthText: "Soy la pesadilla del desarrollador que 'destruye' diseños. Como diseñadora, respeto el trabajo visual y me aseguro de que el resultado final sea fiel al original. Si trabajo con otros diseñadores, aplico ese mismo respeto al código. Domino React y el ecosistema moderno; si el proyecto lo pide, puedo aprender lo que sea sin problema.",
     projectTitle: "Redefinición del ecosistema digital de InGe!",
     projectDescription: "Este proyecto es grande pero tiene su base en Frontend.",
-    projectImage: "/images/proyecto-frontend.jpg",
+    projectImage: "/proyectos/1-preview-inge.webp",
+    projectSlug: "/proyectos/redefinicion-inge", // Único proyecto activo
   },
   {
     id: 4,
@@ -62,9 +59,6 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Stack MERN, Express, Node.js, Python, SQL (MySQL, PostgreSQL), NoSQL (MongoDB).",
     whatIDoText: "Diseño y desarrollo de arquitecturas backend escalables, modelado eficiente de bases de datos y orquestación de servicios mediante APIs seguras.",
     truthText: "Estoy siendo honesta: es el área donde me siento menos fuerte y estoy trabajando para cambiarlo. Actualmente estoy aprendiendo el stack MERN y Java desde cero para fortalecer mi lógica de servidor y dejar de ver esta parte como una debilidad.",
-    projectTitle: "Rediseño de mi portafolio profesional v3.0",
-    projectDescription: "Es exactamente lo que estás viendo ahora.",
-    projectImage: "/images/proyecto-frontend.jpg",
   },
   {
     id: 5,
@@ -74,9 +68,6 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Google Search Console, Lighthouse, SEMrush, Ahrefs, HubSpot, GA4, GTM.",
     whatIDoText: "Optimización técnica completa y auditorías de rendimiento.",
     truthText: "Me fascina. Quiero conocerlo todo: desde las etiquetas, schemas y RDFa, hasta la estrategia de contenido detrás de las palabras clave. Monitorear la carga de un sitio y entender la data para que sea más veloz y encuentre su lugar en el mundo digital es algo que me apasiona profundamente.",
-    projectTitle: "Rediseño de mi portafolio profesional v3.0",
-    projectDescription: "Es exactamente lo que estás viendo ahora.",
-    projectImage: "/images/proyecto-frontend.jpg",
   },
 ];
 
@@ -89,6 +80,7 @@ interface AccordionItemProps {
 
 function AccordionItem({ item, isOpen, onToggle, isLast }: AccordionItemProps) {
   const Icon = item.icon;
+  const hasActiveLink = Boolean(item.projectSlug);
 
   return (
     <div className={`w-full px-4 md:px-8 rounded-sm bg-white ${!isLast ? "border-b border-neutral-200" : ""}`}>
@@ -148,26 +140,47 @@ function AccordionItem({ item, isOpen, onToggle, isLast }: AccordionItemProps) {
                 </div>
               </div>
 
-              {/* Columna 2: Proyecto Destacado */}
+              {/* Columna 2: Proyecto Destacado / En construcción */}
               <div className="lg:col-span-5 bg-black rounded-sm p-6 text-white border border-neutral-800 flex flex-col h-full">
                 <h4 className="font-semibold text-white text-lg mb-5">Proyecto Destacado</h4>
-                <div className="mb-5 overflow-hidden rounded-xl aspect-video bg-black w-full">
-                  {item.projectImage ? (
-                    <img
-                      src={item.projectImage}
-                      alt={item.projectTitle}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray text-sm">
-                      Imagen en producción
+
+                {hasActiveLink ? (
+                  // Proyecto activo con imagen y enlace
+                  <Link 
+                    href={item.projectSlug!} 
+                    className="group/card block cursor-pointer"
+                  >
+                    <div className="mb-5 overflow-hidden rounded-xl aspect-video bg-black w-full relative">
+                      {item.projectImage ? (
+                        <img
+                          src={item.projectImage}
+                          alt={item.projectTitle}
+                          className="w-full h-full grayscale-100 hover:grayscale-0 object-cover object-top group-hover/card:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray text-sm">
+                          Imagen en producción
+                        </div>
+                      )}
+                      <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md p-2 rounded-full text-white opacity-0 group-hover/card:opacity-100 transition-opacity">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
                     </div>
-                  )}
-                </div>
-                <div className="flex flex-col grow justify-end">
-                  <h5 className="font-bold text-white text-xl mb-1.5">{item.projectTitle}</h5>
-                  <p className="text-white text-sm leading-relaxed">{item.projectDescription}</p>
-                </div>
+                    <div className="flex flex-col">
+                      <h5 className="font-bold text-white text-xl mb-1.5 flex items-center gap-2 group-hover/card:text-neutral-200 transition-colors">
+                        {item.projectTitle}
+                        <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/card:opacity-100 transition-opacity -ml-1" />
+                      </h5>
+                      <p className="text-neutral-400 text-sm leading-relaxed">{item.projectDescription}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  // Estado simplificado para proyectos no subidos (sin imagen, sin link)
+                  <div className="py-12 px-6 flex flex-col items-center justify-center text-center bg-neutral-950 rounded-xl border border-neutral-900 my-auto">
+                    <Construction className="w-8 h-8 text-neutral-500 mb-3 stroke-[1.5]" />
+                    <p className="text-neutral-400 text-sm font-medium">En construcción</p>
+                  </div>
+                )}
               </div>
 
             </div>
@@ -179,11 +192,9 @@ function AccordionItem({ item, isOpen, onToggle, isLast }: AccordionItemProps) {
 }
 
 export default function UnicornProfileColumn() {
-  // Estado para controlar cuál ID está abierto (null si todos están cerrados)
   const [openId, setOpenId] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
-    // Si ya está abierto, lo cerramos (null); si no, abrimos ese ID y cerramos el resto
     setOpenId(openId === id ? null : id);
   };
 

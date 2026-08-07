@@ -1,0 +1,21 @@
+# Permitir indexación general y de agentes de IA
+User-agent: *
+Allow: /
+
+# Bots específicos de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Ubicación del mapa de sitio y el archivo de LLMs
+Sitemap: https://sybellasandoval.cl/sitemap.xml
+# Referencia para motores de IA
+# LLMs-Txt: https://sybellasandoval.cl/llms.txt
