@@ -15,7 +15,7 @@ export default function BlogPage() {
       
       {/* Cabecera de la sección */}
       <div className="w-full mb-16">
-        <h1 className="text-black font-bold text-[clamp(3rem,9vw,16rem)] leading-[1.26]mb-4">
+        <h1 className="text-black font-bold text-[clamp(3rem,9vw,16rem)] leading-[1.26] mb-4">
         Blog
         </h1>
       </div>

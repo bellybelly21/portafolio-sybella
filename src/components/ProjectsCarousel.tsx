@@ -1,36 +1,31 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import ProjectCard from "@/components/ProjectCards";
 
 interface ProjectsCarouselProps {
-  children: React.ReactNode;
+  proyectos: any[];
 }
 
-export default function ProjectsCarousel({ children }: ProjectsCarouselProps) {
+export default function ProjectsCarousel({ proyectos }: ProjectsCarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Función para comprobar la posición del scroll
   const checkScrollPosition = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      
-      // Mostrar flecha izquierda si nos hemos movido más de 10px desde el inicio
       setShowLeftArrow(scrollLeft > 10);
-      
-      // Mostrar flecha derecha si aún no hemos llegado al final (con un margen de tolerancia de 10px)
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
     }
   };
 
-  // Comprobar al cargar y al cambiar de tamaño la ventana
   useEffect(() => {
     checkScrollPosition();
     const handleResize = () => checkScrollPosition();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [proyectos]);
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -58,11 +53,16 @@ export default function ProjectsCarousel({ children }: ProjectsCarouselProps) {
       <div 
         ref={scrollContainerRef}
         onScroll={checkScrollPosition}
-        className="w-full mx-auto overflow-x-auto pb-6 flex gap-6 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
+        className="w-full mx-auto overflow-x-auto pb-6 pt-2 flex gap-6 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
       >
-        {children}
+        {proyectos.map((p) => (
+          <ProjectCard 
+            key={p.id} 
+            project={p} 
+            className="shrink-0 w-[320px] sm:w-95 snap-start" 
+          />
+        ))}
       </div>
-
 
       <button 
         onClick={() => scrollCarousel("right")}

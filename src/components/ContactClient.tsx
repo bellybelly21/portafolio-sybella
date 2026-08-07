@@ -67,15 +67,22 @@ export default function ContactClient() {
         throw new Error(data.message || "Hubo un error al enviar el mensaje.");
       }
 
-      setStatus({ loading: false, error: "", success: "¡Mensaje enviado con éxito!" });
+      setStatus({ loading: false, error: "", success: "Mensaje enviado correctamente" });
       setFormData({ name: "", email: "", message: "" });
     } catch (err: any) {
-      setStatus({ loading: false, error: err.message, success: "" });
+      setStatus({ loading: false, error: err.message || "El mensaje no se pudo enviar", success: "" });
     }
   };
 
+  // Determinamos el color de fondo y estado visual del botón
+  const getButtonStateStyle = () => {
+    if (status.success) return "bg-emerald-600 hover:bg-emerald-700 text-white";
+    if (status.error) return "bg-red-600 hover:bg-red-700 text-white";
+    return "bg-black text-white hover:bg-neutral-800";
+  };
+
   return (
-    <div className="bg-white/90 backdrop-blur-md border border-neutral-200/80 p-8 md:p-10 rounded-2xl shadow-xl w-full">
+    <div className="bg-white/90 backdrop-blur-md border border-neutral-200/80 p-8 md:p-10 rounded-2xl w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
         <div>
           <label className="block text-sm font-semibold text-neutral-700 mb-1.5">Nombre</label>
@@ -122,9 +129,36 @@ export default function ContactClient() {
         <button
           type="submit"
           disabled={status.loading}
-          className="w-full bg-black text-white font-medium py-3.5 px-6 rounded-lg hover:bg-neutral-800 transition-all duration-300 cursor-pointer disabled:opacity-50 shadow-md"
+          className={`w-full font-medium py-3.5 px-6 rounded-lg transition-all duration-300 cursor-pointer disabled:opacity-80 flex items-center justify-center gap-3 ${getButtonStateStyle()}`}
         >
-          {status.loading ? "Enviando mensaje..." : "Enviar Mensaje"}
+          {status.loading ? (
+            <>
+              {/* Spinner de carga animado */}
+              <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span>Enviando mensaje...</span>
+            </>
+          ) : status.success ? (
+            <>
+              <span>Mensaje enviado correctamente</span>
+
+              <svg className="w-5 h-5 transition-transform duration-500 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"></path>
+              </svg>
+            </>
+          ) : status.error ? (
+            <>
+              <span>El mensaje no se pudo enviar</span>
+              {/* Ícono de alerta/cruz conveniente */}
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </>
+          ) : (
+            <span>Enviar Mensaje</span>
+          )}
         </button>
 
         {/* Texto legal requerido por Google cuando se oculta la insignia flotante */}
@@ -139,9 +173,6 @@ export default function ContactClient() {
           </a>{" "}
           de Google.
         </p>
-  
-        {status.error && <p className="text-red-600 text-sm mt-1 text-center font-medium">{status.error}</p>}
-        {status.success && <p className="text-green-600 text-sm mt-1 text-center font-medium">{status.success}</p>}
       </form>
     </div>
   );

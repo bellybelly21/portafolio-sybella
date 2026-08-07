@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
 
-
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -22,8 +21,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = "https://portafolio-sybella.vercel.app";
   const postUrl = `${siteUrl}/blog/${slug}`;
   
-  // Priorizamos coverImage para redes, si no existe usa thumbnail
-  const imageToUse = post.meta.coverImage || post.meta.thumbnail;
+  const rawImage = post.meta.coverImage || post.meta.thumbnail;
+  const imagePath = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
   return {
     title: post.meta.title,
@@ -39,13 +38,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       publishedTime: post.meta.date,
       authors: ["Sybella Sandoval Soto"],
-      images: imageToUse ? [{ url: `${siteUrl}${imageToUse}` }] : [],
+      images: imagePath ? [{ url: `${siteUrl}${imagePath}` }] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.meta.title,
       description: post.meta.description,
-      images: imageToUse ? [`${siteUrl}${imageToUse}`] : [],
+      images: imagePath ? [`${siteUrl}${imagePath}`] : [],
     },
   };
 }
@@ -75,8 +74,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       })
     : "";
 
-  // Imagen grande para el post (respalda con thumbnail si no hay coverImage)
-  const postImage = post.meta.coverImage || post.meta.thumbnail;
+  // Normalizamos la ruta de la imagen del post para que siempre comience con '/'
+  const rawImage = post.meta.coverImage || post.meta.thumbnail;
+  const postImage = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
   // 2. SCHEMA.ORG
   const jsonLd = {
@@ -161,7 +161,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           {/* Autoría explícita orientada a Google Knowledge Graph */}
-          <div className="w-full mt-16 pt-8 border-t border-neutral-200 text-xl text-black" itemProp="author" itemScope itemType="https://schema.org/Person">
+          <div className="w-full mt-16 pt-8 border-t border-neutral-200 text-[18px] text-black" itemProp="author" itemScope itemType="https://schema.org/Person">
             Escrito por <b itemProp="name">Sybella Sandoval Soto</b>
           </div>
         </div>

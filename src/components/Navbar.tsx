@@ -55,23 +55,30 @@ export default function Navbar() {
         aria-label="Navegación principal"
         className="relative flex items-center justify-between bg-white/80 backdrop-blur-lg rounded-2xl py-4 px-5 lg:py-6 lg:px-8"
       >
-        {/* Logo con micro-interacción al pasar el mouse */}
-        <Link 
-          href="/" 
-          className="z-10 shrink-0 group"
-          aria-label="Ir a la página de inicio"
-          onClick={closeMenu}
-        >
-          <Image 
-            src={logo} 
-            alt="Logo Sybella Sandoval" 
-            width={82} 
-            height={34} 
-            priority
-            sizes="82px"
-            className="w-auto h-auto transition-transform duration-300 group-hover:scale-105"
-          />
-        </Link>
+        {/* Logo con micro-interacción de cortina al pasar el mouse */}
+<Link 
+  href="/" 
+  className="z-10 shrink-0 group inline-flex items-center gap-3"
+  aria-label="Ir a la página de inicio"
+  onClick={closeMenu}
+>
+  <Image 
+    src={logo} 
+    alt="Logo Sybella Sandoval" 
+    width={82} 
+    height={34} 
+    priority
+    sizes="82px"
+    className="w-auto h-auto transition-transform duration-300 group-hover:scale-102"
+  />
+
+  {/* Contenedor del texto */}
+  <div className="max-w-0 overflow-hidden opacity-0 whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-62.5 group-hover:opacity-100">
+    <span className="text-sm md:text-base font-medium tracking-tight text-neutral-900">
+      Sybella Sandoval Soto
+    </span>
+  </div>
+</Link>
 
         <div className="flex items-center xl:gap-10">
           {/* Links Desktop con hover fluido */}
@@ -83,7 +90,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
-                    className={`text-[18px] transition-colors duration-200 focus:outline-2 focus:outline-offset-2 focus:outline-black ${
+                    className={`text-[18px] transition-colors duration-200 ${
                       isActive ? "text-black font-medium" : "text-neutral-600 hover:text-black"
                     }`}
                   >

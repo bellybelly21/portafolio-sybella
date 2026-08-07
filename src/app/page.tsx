@@ -3,9 +3,12 @@ import TextEffect from "@/components/TextEffect";
 import HeroDetails from "@/components/HeroDetails";
 import MotionSection from "@/components/MotionSection"; 
 import ProjectsCarousel from "@/components/ProjectsCarousel";
+import {proyectosData} from "@/data/proyectos"
 import AccordionItem from "@/components/AccordionItems";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+
+const proyectosDestacados = proyectosData.slice(0, 5);
 
 export const metadata: Metadata = {
   title: "Sybella Sandoval Soto", 
@@ -38,23 +41,7 @@ export default function Home() {
             </button>
           </div>
 
-          <ProjectsCarousel>
-            <div className="min-w-full sm:min-w-109 h-100 bg-neutral-900 rounded-xl shrink-0 border p-6 flex flex-col justify-between shadow-lg snap-start">
-              {/* Contenido de la card 1 */}
-            </div>
-
-            <div className="min-w-full sm:min-w-109 h-100 bg-neutral-900 rounded-xl shrink-0 border p-6 flex flex-col justify-between shadow-lg snap-start">
-              {/* Contenido de la card 2 */}
-            </div>
-
-            <div className="min-w-full sm:min-w-109 h-100 bg-neutral-900 rounded-xl shrink-0 border p-6 flex flex-col justify-between shadow-lg snap-start">
-              {/* Contenido de la card 3 */}
-            </div>
-
-            <div className="min-w-full sm:min-w-109 h-100 bg-neutral-900 rounded-xl shrink-0 border p-6 flex flex-col justify-between shadow-lg snap-start">
-              {/* Contenido de la card 4 */}
-            </div>
-          </ProjectsCarousel>
+          <ProjectsCarousel proyectos={proyectosDestacados} />
         </MotionSection>
 
       </section>
@@ -115,11 +102,11 @@ export default function Home() {
           >
             {/* Imagen miniatura del post (si existe) */}
             {post.thumbnail && (
-  <div className="w-full md:w-72 h-48 rounded-sm overflow-hidden bg-neutral-100 shrink-0">
+  <div className="w-full md:w-fit h-fit rounded-sm overflow-hidden bg-neutral-100 shrink-0 align-middle flex">
     <img
       src={post.thumbnail}
       alt={post.title}
-      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+      className="w-full md:w-50 md:h-50 h-full object-contain group-hover:scale-102 transition-transform duration-500"
     />
   </div>
 )}
