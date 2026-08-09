@@ -16,7 +16,7 @@ export interface Project {
         categories: ["Experiencia laboral", "Frontend"], 
         date: "Mar 2025 - Jul 2026", 
         tags: ["Experiencia laboral", "Frontend"], 
-        logo: "/logo-empresa.png", 
+        logo: "/proyectos/1-logo-inge.png", 
         image: "/proyectos/1-preview-inge.webp", 
         link: "/proyectos/redefinicion-inge" 
       },

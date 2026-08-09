@@ -54,7 +54,7 @@ export default function ConstructionModal() {
         {/* Botón de cierre */}
         <button
           onClick={handleClose}
-          className="w-full py-3 px-4 bg-black text-white rounded-xl font-medium text-sm hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+          className="cursor-pointer w-full py-3 px-4 bg-black text-white rounded-xl font-medium text-sm hover:bg-neutral-800 transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
         >
           Entendido, explorar sitio
         </button>
