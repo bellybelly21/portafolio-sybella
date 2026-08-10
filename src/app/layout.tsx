@@ -76,8 +76,8 @@ export default function RootLayout({
         <Footer />
         <ConstructionModal />
         <CookieBanner />
+        <GoogleAnalytics gaId="G-0VT04NJ21G" />
       </body>
-      <GoogleAnalytics gaId="G-0VT04NJ21G" />
     </html>
   );
 }
