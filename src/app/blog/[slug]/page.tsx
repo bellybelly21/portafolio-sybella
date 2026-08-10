@@ -1,26 +1,22 @@
 import { getPostBySlug, getAllPosts } from "@/data/posts";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
+import { marked } from "marked"; 
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// GENERACIÓN DINÁMICA DE METADATOS SEO (OpenGraph, Twitter y Canonical)
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return {
-      title: "Artículo no encontrado",
-    };
+    return { title: "Artículo no encontrado" };
   }
 
   const siteUrl = "https://sybellasandoval.cl";
   const postUrl = `${siteUrl}/blog/${slug}`;
-  
   const rawImage = post.coverImage || post.thumbnail;
   const imagePath = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
@@ -28,9 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.title,
     description: post.description,
     authors: [{ name: "Sybella Sandoval Soto" }],
-    alternates: {
-      canonical: postUrl,
-    },
+    alternates: { canonical: postUrl },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -49,7 +43,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// Genera las rutas estáticas
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
@@ -64,7 +57,6 @@ export default async function BlogPostPage({ params }: PageProps) {
   const siteUrl = "https://sybellasandoval.cl";
   const postUrl = `${siteUrl}/blog/${slug}`;
 
-  // Formatear la fecha a formato ISO para los motores de búsqueda
   const isoDate = post.date ? new Date(post.date).toISOString() : "";
   const formattedDate = post.date
     ? new Date(post.date).toLocaleDateString("es-ES", {
@@ -74,11 +66,12 @@ export default async function BlogPostPage({ params }: PageProps) {
       })
     : "";
 
-  // Normalizamos la ruta de la imagen del post para que siempre comience con '/'
   const rawImage = post.coverImage || post.thumbnail;
   const postImage = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
-  // 2. SCHEMA.ORG
+  // Convertimos el Markdown a HTML de forma limpia y compatible con Cloudflare
+  const htmlContent = await marked(post.content);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -105,26 +98,20 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
-      {/* Inyección del Schema JSON-LD para Googlebot */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <article className="w-full min-h-screen bg-white pb-24 pt-35 md:pt-35 lg:pt-36 xl:pt-35" itemScope itemType="https://schema.org/BlogPosting">
-        
-        {/* Metadatos ocultos para microformatos RDFa / Schema nativos adicionales */}
         <meta itemProp="inLanguage" content="es-CL" />
         <meta itemProp="datePublished" content={isoDate} />
         <meta itemProp="dateModified" content={isoDate} />
 
         <div className="mx-auto flex flex-col items-start mb-12">
-          
-        <span className="text-xs md:text-sm font-semibold uppercase text-gray mb-4 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
+          <span className="text-xs md:text-sm font-semibold uppercase text-gray mb-4 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
             Artículo {formattedDate && `- `}
-            {isoDate && (
-              <time dateTime={isoDate}>{formattedDate}</time>
-            )}
+            {isoDate && <time dateTime={isoDate}>{formattedDate}</time>}
           </span>
 
           <h1 className="font-bold text-black text-[clamp(2rem,9vw,4rem)] leading-[1.15] mb-6 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50" itemProp="headline">
@@ -149,13 +136,13 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <div className="w-full max-w-5xl flex flex-col items-start px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
           
+          {/* Cuerpo del artículo renderizado correctamente desde Markdown */}
+          <div 
+            className="w-full prose prose-neutral max-w-none text-gray text-base md:text-lg leading-relaxed space-y-6 [&>p]:mb-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-4 [&>strong]:text-black" 
+            itemProp="articleBody"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
 
-          {/* Cuerpo del artículo */}
-          <div className="w-full prose prose-neutral max-w-none text-gray text-base md:text-lg leading-relaxed space-y-6 [&>p]:mb-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-4 [&>strong]:text-black" itemProp="articleBody">
-            <MDXRemote source={post.content} />
-          </div>
-
-          {/* Autoría explícita orientada a Google Knowledge Graph */}
           <div className="w-full mt-16 pt-8 border-t border-neutral-200 text-[18px] text-black" itemProp="author" itemScope itemType="https://schema.org/Person">
             Escrito por <b itemProp="name">Sybella Sandoval Soto</b>
           </div>
