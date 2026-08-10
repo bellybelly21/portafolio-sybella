@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from "@/lib/posts";
+import { getPostBySlug, getAllPosts } from "@/data/posts";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
@@ -21,29 +21,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = "https://sybellasandoval.cl";
   const postUrl = `${siteUrl}/blog/${slug}`;
   
-  const rawImage = post.meta.coverImage || post.meta.thumbnail;
+  const rawImage = post.coverImage || post.thumbnail;
   const imagePath = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
   return {
-    title: post.meta.title,
-    description: post.meta.description,
+    title: post.title,
+    description: post.description,
     authors: [{ name: "Sybella Sandoval Soto" }],
     alternates: {
       canonical: postUrl,
     },
     openGraph: {
-      title: post.meta.title,
-      description: post.meta.description,
+      title: post.title,
+      description: post.description,
       url: postUrl,
       type: "article",
-      publishedTime: post.meta.date,
+      publishedTime: post.date,
       authors: ["Sybella Sandoval Soto"],
       images: imagePath ? [{ url: `${siteUrl}${imagePath}` }] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.meta.title,
-      description: post.meta.description,
+      title: post.title,
+      description: post.description,
       images: imagePath ? [`${siteUrl}${imagePath}`] : [],
     },
   };
@@ -65,9 +65,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   // Formatear la fecha a formato ISO para los motores de búsqueda
-  const isoDate = post.meta.date ? new Date(post.meta.date).toISOString() : "";
-  const formattedDate = post.meta.date
-    ? new Date(post.meta.date).toLocaleDateString("es-ES", {
+  const isoDate = post.date ? new Date(post.date).toISOString() : "";
+  const formattedDate = post.date
+    ? new Date(post.date).toLocaleDateString("es-ES", {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
@@ -75,15 +75,15 @@ export default async function BlogPostPage({ params }: PageProps) {
     : "";
 
   // Normalizamos la ruta de la imagen del post para que siempre comience con '/'
-  const rawImage = post.meta.coverImage || post.meta.thumbnail;
+  const rawImage = post.coverImage || post.thumbnail;
   const postImage = rawImage ? (rawImage.startsWith('/') ? rawImage : `/${rawImage}`) : null;
 
   // 2. SCHEMA.ORG
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: post.meta.title,
-    description: post.meta.description,
+    headline: post.title,
+    description: post.description,
     image: postImage ? `${siteUrl}${postImage}` : undefined,
     datePublished: isoDate,
     dateModified: isoDate,
@@ -128,18 +128,18 @@ export default async function BlogPostPage({ params }: PageProps) {
           </span>
 
           <h1 className="font-bold text-black text-[clamp(2rem,9vw,4rem)] leading-[1.15] mb-6 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50" itemProp="headline">
-            {post.meta.title}
+            {post.title}
           </h1>
 
           <p className="text-gray text-[clamp(1rem,1.5vw,1.5rem)] leading-relaxed mb-10 px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50" itemProp="description">
-            {post.meta.description}
+            {post.description}
           </p>
 
           {postImage && (
             <div className="w-full h-auto max-h-125 rounded-sm overflow-hidden bg-neutral-100 mb-10 xl:mb-20">
               <img
                 src={postImage}
-                alt={post.meta.title}
+                alt={post.title}
                 className="w-full h-full object-cover"
                 itemProp="image"
               />
@@ -149,11 +149,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <div className="w-full max-w-5xl flex flex-col items-start px-6 md:px-10 lg:px-31 xl:px-37 2xl:px-50">
           
-          {post.meta.introduction && (
-            <p className="text-lg md:text-xl italic text-gray leading-relaxed mb-8 border-l-2 border-black pl-4">
-              {post.meta.introduction}
-            </p>
-          )}
 
           {/* Cuerpo del artículo */}
           <div className="w-full prose prose-neutral max-w-none text-gray text-base md:text-lg leading-relaxed space-y-6 [&>p]:mb-6 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-4 [&>strong]:text-black" itemProp="articleBody">

@@ -6,7 +6,7 @@ import ProjectsCarousel from "@/components/ProjectsCarousel";
 import {proyectosData} from "@/data/proyectos"
 import AccordionItem from "@/components/AccordionItems";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts } from "@/data/posts";
 
 const proyectosDestacados = proyectosData.slice(0, 5);
 
