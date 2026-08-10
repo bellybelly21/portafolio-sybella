@@ -94,7 +94,7 @@ export default function ContactClient() {
             onFocus={handleFocusFirstInput} 
             required
             placeholder="Tu nombre o empresa"
-            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all text-neutral-900 placeholder:text-neutral-400"
+            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all text-neutral-900 placeholder:text-gray"
           />
         </div>
   
@@ -108,7 +108,7 @@ export default function ContactClient() {
             onFocus={handleFocusFirstInput}
             required
             placeholder="correo@ejemplo.com"
-            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all text-neutral-900 placeholder:text-neutral-400"
+            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all text-neutral-900 placeholder:text-gray"
           />
         </div>
   
@@ -122,7 +122,7 @@ export default function ContactClient() {
             onFocus={handleFocusFirstInput}
             required
             placeholder="Cuéntame sobre tu proyecto o idea..."
-            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all resize-none text-neutral-900 placeholder:text-neutral-400"
+            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg p-3 text-sm focus:outline-none focus:border-black focus:bg-white transition-all resize-none text-neutral-900 placeholder:text-gray"
           />
         </div>
   
@@ -162,13 +162,13 @@ export default function ContactClient() {
         </button>
 
         {/* Texto legal requerido por Google cuando se oculta la insignia flotante */}
-        <p className="text-[11px] text-neutral-400 text-center leading-tight">
+        <p className="text-[11px] text-gray text-center leading-tight">
           Este sitio está protegido por reCAPTCHA y se aplican la{" "}
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="underline hover:text-neutral-600">
+          <a href="https://policies.google.com/privacy" aria-label="Ir a las políticas de privacidad de Google" target="_blank" rel="noreferrer" className="underline hover:text-neutral-600">
             Política de Privacidad
           </a>{" "}
           y los{" "}
-          <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="underline hover:text-neutral-600">
+          <a href="https://policies.google.com/terms" aria-label="Ir a los términos de servicio de Google" target="_blank" rel="noreferrer" className="underline hover:text-neutral-600">
             Términos de Servicio
           </a>{" "}
           de Google.

@@ -47,7 +47,7 @@ export default function Footer() {
       {/* Sección principal: Hablemos */}
       <div className="flex flex-col lg:flex-row justify-between lg:gap-16">
         <div className="lg:w-2/3">
-          <a href="/contacto" className="flex items-center group text-center justify-center">
+          <a href="/contacto" aria-label="Ir a la página de contacto" className="flex items-center group text-center justify-center">
           <span className="text-[clamp(32px,9vw,161px)] font-bold leading-[1.26]">
   Hablemos
 </span>
@@ -64,12 +64,13 @@ export default function Footer() {
     { label: 'Proyectos', href: '/proyectos' },
     { label: 'Sobre mí', href: '/sobre-mi' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Descargar CV', href: '/cv.pdf' } 
+    { label: 'Descargar CV', href: '/CV_Sybella_Sandoval.pdf' } 
   ].map((link) => (
     <a 
       key={link.label} 
       href={link.href} 
-      className="hover:text-neutral-400 transition-colors"
+      aria-label={`Ir a ${link.label}`}
+      className="hover:text-neutral-200 transition-colors"
     >
       {link.label}
     </a>
@@ -78,11 +79,11 @@ export default function Footer() {
 
             <div className="flex gap-4 justify-center">
               {[
-                { Icon: LinkedinSvg, href: "https://linkedin.com/in/sybellasandoval" },
-                { Icon: GithubSvg, href: "https://github.com/bellybelly21" },
-                { Icon: BehanceSvg, href: "https://behance.net/sybellasandoval" }
-              ].map(({ Icon, href }, i) => (
-                <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-neutral-800 transition-colors">
+                { Icon: LinkedinSvg, href: "https://linkedin.com/in/sybellasandoval", aria:"Ir al perfil de Linkedin" },
+                { Icon: GithubSvg, href: "https://github.com/bellybelly21", aria:"Ir al perfil de Github" },
+                { Icon: BehanceSvg, href: "https://behance.net/sybellasandoval", aria:"Ir al perfil de Behance" }
+              ].map(({ Icon, href, aria }, i) => (
+                <a key={i} href={href} target="_blank" aria-label={aria} rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center hover:bg-neutral-800 transition-colors">
                   <Icon />
                 </a>
               ))}

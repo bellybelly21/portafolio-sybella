@@ -171,14 +171,14 @@ function AccordionItem({ item, isOpen, onToggle, isLast }: AccordionItemProps) {
                         {item.projectTitle}
                         <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/card:opacity-100 transition-opacity -ml-1" />
                       </h5>
-                      <p className="text-neutral-400 text-sm leading-relaxed">{item.projectDescription}</p>
+                      <p className="text-gray text-sm leading-relaxed">{item.projectDescription}</p>
                     </div>
                   </Link>
                 ) : (
                   // Estado simplificado para proyectos no subidos (sin imagen, sin link)
                   <div className="py-12 px-6 flex flex-col items-center justify-center text-center bg-neutral-950 rounded-xl border border-neutral-900 my-auto">
                     <Construction className="w-8 h-8 text-neutral-500 mb-3 stroke-[1.5]" />
-                    <p className="text-neutral-400 text-sm font-medium">En construcción</p>
+                    <p className="text-gray text-sm font-medium">En construcción</p>
                   </div>
                 )}
               </div>

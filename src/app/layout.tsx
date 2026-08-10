@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ConstructionModal from "@/components/ConstructionModal";
+import CookieBanner from "@/components/CookieBanner";
 
 const PlusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -57,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${PlusJakarta.variable} h-full antialiased`}>
       <head>
+      <meta name="google-site-verification" content="TU_CODIGO_AQUÍ" />
         {/* Inyección de Schema JSON-LD */}
         <script
           type="application/ld+json"
@@ -72,7 +75,9 @@ export default function RootLayout({
         </div>
         <Footer />
         <ConstructionModal />
+        <CookieBanner />
       </body>
+      <GoogleAnalytics gaId="G-0VT04NJ21G" />
     </html>
   );
 }

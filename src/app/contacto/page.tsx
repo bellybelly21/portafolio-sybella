@@ -65,35 +65,38 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="https://www.linkedin.com/in/sybellasandoval/" 
+                aria-label="Ir al perfil de Linkedin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 py-2.5 px-5 bg-black text-white rounded-xs hover:bg-neutral-800 transition-all duration-300 shadow-sm group"
               >
                 <LinkedinSvg />
                 <span className="text-sm font-medium">LinkedIn</span>
-                <ArrowUpRight size={14} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={14} className="text-gray group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
                 href="https://github.com/bellybelly21" 
+                aria-label="Ir al perfil de Github"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 py-2.5 px-5 bg-black text-white rounded-xs hover:bg-neutral-800 transition-all duration-300 shadow-sm group"
               >
                 <GithubSvg />
                 <span className="text-sm font-medium">GitHub</span>
-                <ArrowUpRight size={14} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={14} className="text-gray group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
                 href="https://www.behance.net/sybellasandoval" 
+                aria-label="Ir al perfil de Behance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 py-2.5 px-5 bg-black text-white rounded-xs hover:bg-neutral-800 transition-all duration-300 shadow-sm group"
               >
                 <BehanceSvg />
                 <span className="text-sm font-medium">Behance</span>
-                <ArrowUpRight size={14} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={14} className="text-gray group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>

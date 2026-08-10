@@ -119,7 +119,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-4">
               <button 
                 className={`flex items-center justify-center cursor-pointer py-2.5 px-4 bg-white border border-neutral-200 rounded-xs hover:bg-neutral-50 hover:border-neutral-300 transition-all duration-300 active:scale-95 focus:outline-2 focus:outline-offset-2 focus:outline-black ${customShadow}`}
-                aria-label="Descargar CV (PDF)"
+                aria-label="Descargar CV (PDF)" onClick={() => window.open('/CV_Sybella_Sandoval.pdf', '_blank')}
               >
                 <span className="text-[18px] font-normal">Descargar CV</span>
                 <ArrowDownToLine size={18} strokeWidth={2} className="text-black ml-2 transition-transform duration-300 hover:translate-y-0.5" aria-hidden="true" />
@@ -194,7 +194,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-3 pt-4 border-t border-neutral-100 md:hidden">
               <button 
                 className={`flex items-center justify-center w-full py-3.5 bg-white border border-neutral-200 rounded-xl active:scale-98 transition-transform focus:outline-2 focus:outline-offset-2 focus:outline-black ${customShadow}`}
-                aria-label="Descargar CV (PDF)"
+                aria-label="Descargar CV (PDF)" onClick={() => window.open('/CV_Sybella_Sandoval.pdf', '_blank')}
               >
                 <span className="text-sm font-medium">Descargar CV</span>
                 <ArrowDownToLine size={18} className="text-black ml-2" aria-hidden="true" />
