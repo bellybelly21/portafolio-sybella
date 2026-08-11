@@ -49,7 +49,7 @@ const profileItemsData: ProfileItem[] = [
     projectTitle: "Redefinición del ecosistema digital de InGe!",
     projectDescription: "Este proyecto es grande pero tiene su base en Frontend.",
     projectImage: "/proyectos/1-preview-inge.webp",
-    projectSlug: "/proyectos/redefinicion-inge", // Único proyecto activo
+    projectSlug: "/proyectos/redefinicion-inge", 
   },
   {
     id: 4,
@@ -59,6 +59,10 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Stack MERN, Express, Node.js, Python, SQL (MySQL, PostgreSQL), NoSQL (MongoDB).",
     whatIDoText: "Diseño y desarrollo de arquitecturas backend escalables, modelado eficiente de bases de datos y orquestación de servicios mediante APIs seguras.",
     truthText: "Estoy siendo honesta: es el área donde me siento menos fuerte y estoy trabajando para cambiarlo. Actualmente estoy aprendiendo el stack MERN y Java desde cero para fortalecer mi lógica de servidor y dejar de ver esta parte como una debilidad.",
+    projectTitle: "Rediseño de mi portafolio profesional v3.0",
+    projectDescription: "Este es mi primer proyecto donde hago Backend.",
+    projectImage: "/proyectos/2-preview-portafolio.webp",
+    projectSlug: "/proyectos/rediseno-portafolio-sybella", 
   },
   {
     id: 5,
@@ -171,7 +175,7 @@ function AccordionItem({ item, isOpen, onToggle, isLast }: AccordionItemProps) {
                         {item.projectTitle}
                         <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/card:opacity-100 transition-opacity -ml-1" />
                       </h5>
-                      <p className="text-gray text-sm leading-relaxed">{item.projectDescription}</p>
+                      <p className="text-whitegray text-sm leading-relaxed">{item.projectDescription}</p>
                     </div>
                   </Link>
                 ) : (

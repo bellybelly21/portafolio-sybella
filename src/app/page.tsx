@@ -11,7 +11,7 @@ import { getAllPosts } from "@/data/posts";
 const proyectosDestacados = proyectosData.slice(0, 5);
 
 export const metadata: Metadata = {
-  title: "Sybella Sandoval Soto", 
+  title: "Portafolio de Sybella Sandoval", 
   description: "Portafolio profesional de Sybella Sandoval Soto. Especialista en desarrollo frontend con React y TypeScript, diseño gráfico y diseño UX/UI.",
 };
 

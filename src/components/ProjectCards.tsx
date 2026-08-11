@@ -14,7 +14,7 @@ export default function ProjectCard({ project, className = "" }: ProjectCardProp
     >
       {/* Imagen de fondo con efectos */}
       <div 
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+        className="absolute inset-0 bg-cover bg-top transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-102"
         style={{ backgroundImage: `url(${project.image})` }}
       />
       
@@ -29,9 +29,9 @@ export default function ProjectCard({ project, className = "" }: ProjectCardProp
       {/* Contenido */}
       <div className="absolute bottom-0 left-0 p-8 flex flex-col justify-end h-full z-10 w-full">
         {project.logo && (
-          <img src={project.logo} alt="Logo empresa" className="max-h-23 w-auto mb-6 object-contain self-start" />
+          <img src={project.logo} alt="Logo empresa" className="max-h-10.75 w-auto mb-3 object-contain self-start brightness-0 contrast-200 invert" />
         )}
-        <h3 className="text-white font-bold text-[clamp(1.25rem,2vw,1.5rem)] leading-tight mb-2">
+        <h3 className="text-white font-bold text-[clamp(1.25rem,2vw,1.5rem)] mb-2">
           {project.title}
         </h3>
         <p className="text-neutral-300 text-sm mb-4">{project.date}</p>

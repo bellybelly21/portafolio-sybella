@@ -20,16 +20,16 @@ export interface Project {
         image: "/proyectos/1-preview-inge.webp", 
         link: "/proyectos/redefinicion-inge" 
       },
-    //   { 
-    //     id: 2, 
-    //     title: "Rediseño de mi portafolio profesional v3.0", 
-    //     categories: ["Fullstack", "UX/UI", "SEO"],
-    //     date: "Jul - Ago 2026", 
-    //     tags: ["UX/UI", "Fullstack"], 
-    //     logo: "/logo-empresa.png", 
-    //     image: "/proyectos/2.jpg", 
-    //     link: "/proyectos/rediseno-portafolio-sybella" 
-    //   },
+      { 
+        id: 2, 
+        title: "Rediseño de mi portafolio profesional v3.0", 
+        categories: ["Fullstack", "UX/UI", "SEO"],
+        date: "Jul - Ago 2026", 
+        tags: ["UX/UI", "Fullstack", "SEO"], 
+        logo: "/images/logo-sybella-sandoval.png", 
+        image: "/proyectos/2-preview-portafolio.webp", 
+        link: "/proyectos/rediseno-portafolio-sybella" 
+      },
     //   {
     //     id: 3,
     //     title: "Recopilación de gráficas para redes sociales",

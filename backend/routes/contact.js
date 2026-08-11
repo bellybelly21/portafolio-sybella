@@ -50,40 +50,63 @@ router.post('/', async (req, res) => {
     // Enviar correo usando resend con plantilla HTML
     try{
       await resend.emails.send({
-          from:'Portafolio Sybella <onboarding@resend.dev>',
-          to: 'sybellasss@gmail.com',
-          subject:`Nuevo mensaje de contacto de ${name}`,
-          html:`
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
+        from:'Portafolio Sybella <onboarding@resend.dev>',
+        to: 'sybellasss@gmail.com',
+        subject:`Nuevo mensaje de contacto de ${name}`,
+        html:`
+      <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 0; background-color: #f4f4f5; border-radius: 12px; overflow: hidden; border: 1px solid #e4e4e7;">
+        
+        <!-- Cabecera Negra con Logo -->
+        <div style="background-color: #0F0E0E; padding: 32px 20px; text-align: center;">
+          <img 
+            src="https://sybellasandoval.cl/images/logo-sybella-sandoval.png" 
+            alt="Sybella Sandoval Logo" 
+            style="max-width: 140px; height: auto; display: inline-block; border: 0; filter: brightness(0) invert(1);" 
+          />
+          <p style="color: #a1a1aa; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin: 12px 0 0 0;">Nuevo Mensaje de Contacto</p>
+        </div>
+
+        <!-- Cuerpo Principal Blanco -->
+        <div style="background-color: #ffffff; padding: 40px 30px;">
+          <h2 style="color: #09090b; font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 8px; letter-spacing: -0.5px;">Has recibido una nueva consulta</h2>
+          <p style="font-size: 15px; color: #71717a; line-height: 1.5; margin-top: 0; margin-bottom: 24px;">Detalles de la persona interesada a través de tu portafolio:</p>
           
-          <!-- Logo y Cabecera -->
-          <div style="text-align: center; margin-bottom: 24px;">
-            <img 
-              src="https://sybellasandoval.cl/images/logo-sybella-sandoval.svg" 
-              alt="Sybella Sandoval Logo" 
-              style="max-width: 120px; height: auto; display: inline-block;" 
-            />
+          <!-- Tarjeta de Datos -->
+          <div style="background-color: #fafafa; padding: 24px; border-radius: 8px; border: 1px solid #f0f0f0; margin-bottom: 24px;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding-bottom: 12px; font-size: 14px; color: #71717a; width: 80px; vertical-align: top;"><strong>Nombre:</strong></td>
+                <td style="padding-bottom: 12px; font-size: 14px; color: #09090b; vertical-align: top;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 16px; font-size: 14px; color: #71717a; vertical-align: top;"><strong>Correo:</strong></td>
+                <td style="padding-bottom: 16px; font-size: 14px; vertical-align: top;">
+                  <a href="mailto:${email}" style="color: #09090b; text-decoration: underline; font-weight: 500;">${email}</a>
+                </td>
+              </tr>
+            </table>
+
+            <div style="border-top: 1px solid #eaeaea; padding-top: 16px; margin-top: 4px;">
+              <p style="margin: 0 0 8px 0; font-size: 14px; color: #71717a;"><strong>Mensaje:</strong></p>
+              <div style="background-color: #ffffff; padding: 16px; border-radius: 6px; border: 1px solid #e4e4e7; color: #27272a; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</div>
+            </div>
           </div>
 
-          <h2 style="color: #111111; font-size: 20px; border-bottom: 2px solid #111111; padding-bottom: 12px; margin-top: 0;">Nuevo mensaje desde tu Portafolio</h2>
-          
-          <p style="font-size: 15px; color: #555555; line-height: 1.5;">Has recibido un nuevo mensaje de contacto:</p>
-          
-          <!-- Contenedor de datos -->
-          <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eaeaea; margin: 20px 0;">
-            <p style="margin: 0 0 12px 0; font-size: 14px; color: #333;"><strong>Nombre:</strong> ${name}</p>
-            <p style="margin: 0 0 12px 0; font-size: 14px; color: #333;"><strong>Correo:</strong> <a href="mailto:${email}" style="color: #000; text-decoration: underline;">${email}</a></p>
-            <p style="margin: 0 0 8px 0; font-size: 14px; color: #333;"><strong>Mensaje:</strong></p>
-            <div style="background-color: #ffffff; padding: 12px 16px; border-radius: 6px; border: 1px solid #e0e0e0; color: #333; font-size: 14px; line-height: 1.5; white-space: pre-wrap;">${message}</div>
+          <!-- Botón de Acción Rápida -->
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="mailto:${email}?subject=Re: Tu mensaje en mi portafolio" style="background-color: #09090b; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-block;">Responder directamente</a>
           </div>
-          
-          <!-- Pie de página -->
-          <p style="font-size: 12px; color: #999999; text-align: center; margin-top: 30px; border-top: 1px solid #eaeaea; padding-top: 16px;">
-            Este correo fue enviado automáticamente desde el formulario de contacto de tu portafolio.
+        </div>
+        
+        <!-- Pie de página -->
+        <div style="background-color: #f4f4f5; padding: 20px; text-align: center;">
+          <p style="font-size: 12px; color: #a1a1aa; margin: 0; line-height: 1.4;">
+            Este correo fue enviado automáticamente desde el sistema de contacto de tu portafolio web.
           </p>
         </div>
-      `,
-      });
+      </div>
+    `,
+    });
       
     } catch (emailError) {
         console.error('Error al enviar el correo con Resend:', emailError);

@@ -86,8 +86,33 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                     <p className="font-bold text-black text-[16px] md:text-[18px]">{section.boldText}</p>
                   )}
                   {section.image && (
-                    <img src={section.image} alt={section.title} className="w-full rounded-xl mt-4 object-cover aspect-video" />
+                    <img src={section.image} alt={section.title} className="w-full rounded-sm mt-4 object-cover" />
                   )}
+                </div>
+              );
+
+              case "col-paragraphs-with-image":
+              return (
+                <div key={index} className="flex flex-col gap-6">
+                  <h3 className="text-black font-bold text-2xl md:text-3xl">{section.title}</h3>
+                  
+                  <div className={`grid grid-cols-1 ${section.image ? "md:grid-cols-2 md:items-center" : ""} gap-8`}>
+                    <div className="flex flex-col gap-6 text-gray text-[16px] md:text-[18px]">
+                      <div className="grid grid-cols-1 gap-6">
+                        <p>{section.p1}</p>
+                        <p>{section.p2}</p>
+                      </div>
+                      {section.boldText && (
+                        <p className="font-bold text-black text-[16px] md:text-[18px]">{section.boldText}</p>
+                      )}
+                    </div>
+
+                    {section.image && (
+                      <div>
+                        <img src={section.image} alt={section.title} className="w-full max-h-87.5 rounded-sm object-cover" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               );
 
@@ -101,7 +126,7 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                     {section.images?.map((img: string, i: number) => (
-                      <img key={i} src={img} alt="" className="w-full rounded-xl object-cover" />
+                      <img key={i} src={img} alt="" className="w-full rounded-sm object-cover" />
                     ))}
                   </div>
                 </div>
