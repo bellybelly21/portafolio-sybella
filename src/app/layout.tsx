@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import CodeSignature from "@/components/CodeSignature";
+
 const PlusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
   subsets: ["latin"],
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
     default: "Sybella Sandoval Soto | Frontend Developer & UX/UI Designer",
     template: "%s | Sybella Sandoval Soto",
   },
-  description: "Portafolio profesional y blog de Sybella Sandoval Soto, especializada en desarrollo frontend, React, TypeScript y diseño de interfaces.",
+  description:
+    "Portafolio profesional y blog de Sybella Sandoval Soto, especializada en desarrollo frontend, React, TypeScript y diseño de interfaces.",
   metadataBase: new URL("https://sybellasandoval.cl"),
   authors: [{ name: "Sybella Sandoval Soto" }],
   openGraph: {
@@ -25,6 +27,14 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: "https://sybellasandoval.cl",
     siteName: "Sybella Sandoval Soto Portafolio",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sybella Sandoval Soto - Frontend Developer & UX/UI Designer",
+      },
+    ],
   },
 };
 
@@ -33,7 +43,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Datos estructurados
+  // Datos estructurados (Schema JSON-LD)
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -47,31 +57,28 @@ export default function RootLayout({
       "UX/UI Design",
       "Tailwind CSS",
       "Web Development",
-      "Frontend"
+      "Frontend",
     ],
     alumniOf: "INACAP",
     sameAs: [
       "https://www.linkedin.com/in/sybellasandoval",
-      "https://github.com/bellybelly21"
-    ]
+      "https://github.com/bellybelly21",
+    ],
   };
 
   return (
     <html lang="es" className={`${PlusJakarta.variable} h-full antialiased`}>
-      <head>
-      <meta name="google-site-verification" content="TU_CODIGO_AQUÍ" />
+      <body className="bg-background">
         {/* Inyección de Schema JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </head>
-      <body className="bg-background">
-        
+
         <div className="min-h-screen bg-hero-gradient">
           <Navbar />
           <main className="w-full">
-          <CodeSignature />
+            <CodeSignature />
             {children}
           </main>
         </div>

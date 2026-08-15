@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 // SVGs para redes sociales
 const LinkedinSvg = () => (
@@ -98,17 +99,23 @@ export default function Footer() {
         </div>
 
         {/* Imagen en columna derecha (Desktop) */}
-        <div className="hidden lg:flex lg:w-1/3 justify-end pt-8">
-          <img 
+        <div className="hidden lg:flex lg:w-1/3 xl:justify-end md:justify-center pt-8">
+          <Image 
             src="/images/torre-footer-portafolio.webp" 
             alt="Torre de figuras decorativas" 
+            width={175}
+            height={499}
             className="w-43.75 h-full object-cover rounded-lg  pointer-events-none" 
           />
         </div>
         
         {/* Imagen en mobile/tablet */}
         <div className="lg:hidden pb-0 flex justify-center">
-           <img src="/images/torre-footer-portafolio.webp" alt="Sybella" className="w-43.75 h-auto rounded-lg pointer-events-none" />
+           <Image src="/images/torre-footer-portafolio.webp"
+            alt="Torre de figuras decorativas" 
+            width={124}
+            height={352}
+            className="w-43.75 h-auto rounded-lg pointer-events-none" />
         </div>
       </div>
     </footer>
