@@ -6,19 +6,19 @@ export interface Project {
     tags: string[];
     logo: string;
     image: string;
-    link: string;
+    slug: string;
   }
   
   const rawProyectos: Project[] = [
     { 
         id: 1, 
         title: "Redefinición del ecosistema digital InGe!", 
-        categories: ["Experiencia laboral", "Frontend"], 
+        categories: ["Experiencia laboral", "Frontend", "UX/UI"], 
         date: "Mar 2025 - Jul 2026", 
         tags: ["Experiencia laboral", "Frontend"], 
         logo: "/proyectos/1-logo-inge.png", 
         image: "/proyectos/1-preview-inge.webp", 
-        link: "/proyectos/redefinicion-inge" 
+        slug: "/proyectos/redefinicion-inge" 
       },
       { 
         id: 2, 
@@ -28,7 +28,7 @@ export interface Project {
         tags: ["UX/UI", "Fullstack", "SEO"], 
         logo: "/images/logo-sybella-sandoval.png", 
         image: "/proyectos/2-preview-portafolio.webp", 
-        link: "/proyectos/rediseno-portafolio-sybella" 
+        slug: "/proyectos/rediseno-portafolio-sybella" 
       },
       {
         id: 3,
@@ -38,7 +38,7 @@ export interface Project {
         tags: ["Diseño gráfico"],
         logo: "/proyectos/3-logo-arkenco.png",
         image: "/proyectos/3-preview-arkenco.webp",
-        link: "/proyectos/graficas-rrss-arkenco"
+        slug: "/proyectos/graficas-rrss-arkenco"
       },
   
     //   {
@@ -49,7 +49,7 @@ export interface Project {
     //   tags: ["UX/UI"],
     //   logo: "/logo-empresa.png",
     //   image: "/proyectos/4.jpg",
-    //   link: "/proyectos/rediseno-web-puerta-del-sol"
+    //   slug: "/proyectos/rediseno-web-puerta-del-sol"
     // },
     // {
     //   id: 5,
@@ -59,7 +59,7 @@ export interface Project {
     //   tags: ["UX/UI"],
     //   logo: "/logo-empresa.png",
     //   image: "/proyectos/5.jpg",
-    //   link: "/proyectos/recopilacion-webs-arkenco"
+    //   slug: "/proyectos/recopilacion-webs-arkenco"
     // },
     // {
     //   id: 6,
@@ -69,7 +69,7 @@ export interface Project {
     //   tags: ["Diseño gráfico", "SEO"],
     //   logo: "/logo-empresa.png",
     //   image: "/proyectos/6.jpg",
-    //   link: "/proyectos/rediseno-landing-macrodent"
+    //   slug: "/proyectos/rediseno-landing-macrodent"
     // },
     // {
     //   id: 7,
@@ -79,7 +79,7 @@ export interface Project {
     //   tags: ["Diseño gráfico", "SEO"],
     //   logo: "/logo-empresa.png",
     //   image: "/proyectos/7.jpg",
-    //   link: "/proyectos/rediseno-landing-rdox"
+    //   slug: "/proyectos/rediseno-landing-rdox"
     // }
   
     ];

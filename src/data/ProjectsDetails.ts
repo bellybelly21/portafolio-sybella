@@ -13,6 +13,7 @@ export interface Section {
 
 export interface ProjectDetail {
   title: string;
+  slug: string;
   categories: string[];
   date: string;
   descripcion: string;
@@ -25,7 +26,8 @@ export interface ProjectDetail {
 export const proyectosDetalle: Record<string, ProjectDetail> = {
   "redefinicion-inge": {
     title: "Redefinición del ecosistema digital de InGe!",
-    categories: ["Experiencia laboral", "Frontend"],
+    slug: "/proyectos/redefinicion-inge",
+    categories: ["Experiencia laboral", "Frontend", "UX/UI"],
     date: "Mar 2025 - Jul 2026",
     descripcion: "Cuando llegué a InGe, la presencia digital era, en el mejor de los casos, fragmentada. Me encontré con una empresa que tenía diseños antiguos desperdigados en distintos dominios, una identidad visual que no transmitía la seriedad del sector y una infraestructura que, técnicamente, estaba pidiendo a gritos una renovación total.",
     role: "Diseñadora gráfica UX/UI, desarrolladora Frontend, entre otros.",
@@ -71,13 +73,14 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
       {
         type: "col-paragraphs-triple",
         title: "Resultados finales",
-        p1: "Cuando el sitio público estuvo listo, lideré el diseño del sitio privado. Craneé los flujos más complejos, especialmente el de cotización y compra de garantías, siempre bajo la premisa: debe ser mejor que el resto. Mis últimos meses cerraron el círculo: mejoramos la comunicación digital gestionando calendarios de contenido, mails automatizados (Mailchimp/Sendgrid) y optimizando la imagen corporativa.",
-        p2: "InGe fue mi escuela de guerra. Sin embargo, mi evolución me pedía más código, más desafío técnico y menos tareas monótonas de diseño gráfico. Renuncié porque el aprendizaje ya no estaba en la zona de confort. Me llevo la gratitud de un equipo increíble y la certeza de que dejé a InGe con una plataforma profesional, las redes sociales consistentes, un perfil que da confianza a los clientes.",
+        p1: "Cuando el sitio público estuvo listo, hice el diseño del sitio privado. Craneé los flujos más complejos, especialmente el de cotización y compra de garantías, siempre bajo la premisa: debe ser mejor que el resto. Mis últimos meses cerraron el círculo: mejoramos la comunicación digital gestionando calendarios de contenido, mails automatizados (Mailchimp/Sendgrid) y optimizando la imagen corporativa.",
+        p2: "InGe fue mi primera oportunidad para hacer desarrollo web. Sin embargo, mi evolución me pedía más código, más desafío técnico y menos tareas monótonas de diseño gráfico. Renuncié porque el aprendizaje ya no estaba en la zona de confort. Me llevo la gratitud de un equipo increíble y la certeza de que dejé a InGe con una plataforma profesional, las redes sociales consistentes, un perfil que da confianza a los clientes.",
         images: ["/proyectos/1-final-1.webp", "/proyectos/1-final-2.webp", "/proyectos/1-final-3.webp"] 
     }]
 },
   "rediseno-portafolio-sybella":{
     title: "Rediseño de mi portafolio profesional v3.0",
+    slug: "/proyectos/rediseno-portafolio-sybella",
     categories: ["Fullstack", "UX/UI", "SEO"],
     date: "Jul - Ago 2026",
     descripcion: "Evolución integral de mi marca personal. Un portafolio minimalista, modular y de alto rendimiento, construido para reflejar mi transición hacia el desarrollo fullstack, integrando estrategias de SEO avanzado y optimización de experiencia de usuario.",
@@ -118,8 +121,8 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
   {
     type: "row-paragraphs-with-image",
   title:"Unificación de poderes",
-  p1:"Un gran sitio no sirve de nada si nadie lo encuentra. Por eso blindé el proyecto integrando SEO on-page y técnico avanzado, incluyendo schemas RDFa JSON-LD tanto en la web como en el blog.",
-  p2:"Rematé la infraestructura configurando un robots.txt, un sitemap.xml, directrices en agents.md y cookies de terceros con GA4. Sé que en el desarrollo web nunca se termina de aprender, y aún queda mucho que hacer, pero el estándar ya está puesto.",
+  p1:"Un gran sitio no sirve de nada si nadie lo encuentra, aunque el objetivo de este portafolio sólo fuera ser 'de muestra' más que algo comercial que necesita ser encontrado. Pero igual quise meterle SEO on-page, incluyendo schemas RDFa JSON-LD tanto en la web como en el blog.",
+  p2:"Rematé la infraestructura configurando un robots.txt, un sitemap.xml, directrices en agents.md y cookies de terceros con GA4. Sé que en el desarrollo web nunca se termina de aprender, y aún queda mucho que hacer, pero el estándar ya está puesto y toca seguir subiendo proyectos.",
   image: "/proyectos/2-seo.webp"
   }
 
@@ -127,77 +130,78 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
   },
 
   "graficas-rrss-arkenco":{
-    "title": "Recopilación de gráficas para redes sociales",
-    "categories": ["Diseño gráfico"],
-    "date": "Dic 2023 - Jul 2025",
-    "descripcion": "Durante mi tiempo en Arkenco, agencia de Marketing Digital, me encargué de la creación de contenido visual para las redes sociales de la empresa y los distintos clientes. Este trabajo implicó diseñar y producir una gran variedad de posts, carruseles y reels. Aquí presento una muestra del ecosistema gráfico que gestioné. Detrás de cada diseño hay una historia de recursos limitados, clientes exigentes y flujos de trabajo caóticos.",
-    "role": "Diseñadora gráfica y creadora de contenido visual.",
-    "mission": "Desarrollar material gráfico atractivo y coherente para los clientes de Arkenco.",
-    "mainImage": "/proyectos/3-preview-arkenco.webp",
-    "sections": [
+    title: "Recopilación de gráficas para redes sociales",
+    slug: "/proyectos/graficas-rrss-arkenco",
+    categories: ["Diseño gráfico"],
+    date: "Dic 2023 - Jul 2025",
+    descripcion: "Durante mi tiempo en Arkenco, agencia de Marketing Digital, me encargué de la creación de contenido visual para las redes sociales de la empresa y los distintos clientes. Este trabajo implicó diseñar y producir una gran variedad de posts, carruseles y reels. Aquí presento una muestra del ecosistema gráfico que gestioné, enfocado en resolver requerimientos diversos bajo un flujo constante de producción.",
+    role: "Diseñadora gráfica y creadora de contenido visual.",
+    mission: "Desarrollar material gráfico atractivo y coherente para los clientes de Arkenco.",
+    mainImage: "/proyectos/3-preview-arkenco.webp",
+    sections: [
       {
-        "type": "graphic-gallery",
-        "title": "Clínica Puerta del Sol",
-        "p1": "El reto fue crear una identidad visual para una clínica médica a partir de recursos limitados. Trabajar con bancos de imágenes siempre es un desafío porque carecen de autenticidad y rara vez conectan de verdad con la audiencia local, pero había que ingeniárselas con lo que había.",
-        "p2": "Además del diseño de plantillas para posts y la maquetación de reels, a veces me tocaba asumir un rol que no me correspondía: salir a la calle, ir a la clínica y acompañar a grabar. No era mi actividad favorita ni la esencia de mi cargo, pero es un recuerdo de este lugar. De hecho, en algunos videos de cómo llegar a la clínica, aparece mi reflejo en la puerta de vidrio. Y por ahí hay una foto de mí haciendo de paciente.",
-        "images": [
+        type: "graphic-gallery",
+        title: "Clínica Puerta del Sol",
+        p1: "El reto fue crear una identidad visual para una clínica médica a partir de recursos limitados. Trabajar con bancos de imágenes siempre es un desafío porque carecen de autenticidad y rara vez conectan de verdad con la audiencia local, pero muchas veces tocaba resolver con lo que había disponible.",
+        p2: "Además del diseño de plantillas para posts y la maquetación de reels, el proceso abarcó la dirección visual en terreno, acompañando registros fotográficos y de video directamente en la clínica. Como detalle curioso, en algunos videos institucionales aparece mi reflejo en las puertas de vidrio y un registro mío haciendo de paciente para las dinámicas visuales.",
+        images: [
           "/proyectos/arkenco/3-proyecto-1.webp",
           "/proyectos/arkenco/3-proyecto-2.webp",
           "/proyectos/arkenco/3-proyecto-3.webp",
           "/proyectos/arkenco/3-proyecto-4.webp"
         ],
-        "videos": [
+        videos: [
           { "src": "/proyectos/arkenco/reels/dr-aldo-rimassa-ops.mp4", "poster": "/proyectos/arkenco/reels/dr-aldo-rimassa-ops.webp" },
           { "src": "/proyectos/arkenco/reels/dr-jose-vergara-ops.mp4", "poster": "/proyectos/arkenco/reels/dr-jose-vergara-ops.webp" },
           { "src": "/proyectos/arkenco/reels/uso-pantallas-ops.mp4", "poster": "/proyectos/arkenco/reels/uso-pantallas-ops.webp" }
         ]
       },
       {
-        "type": "graphic-gallery",
-        "title": "Miracle Clinic",
-        "p1": "Una clínica estética con un nivel de exigencia altísimo: requerían dos reels semanales, entregas de material a contratiempo y rondas de correcciones continuas. Ahí adjunté un pantallazo de todos los videos que hice para ellos.",
-        "p2": "Aunque editar en CapCut me permitía resolver con agilidad frente a las limitaciones de otras herramientas, el volumen de trabajo superó con creces lo acordado en un principio.",
-        "sectionImage": "/proyectos/arkenco/3-proyecto-miracle.webp",
-        "boldText": "Esta experiencia fue el punto de inflexión que me enseñó a identificar los límites entre la colaboración flexible y la sobrecarga.",
-        "images": [
+        type: "graphic-gallery",
+        title: "Miracle Clinic",
+        p1: "Una clínica estética con un requerimiento constante de reels; necesitaban dos semanales, gestión de materiales a contratiempo y múltiples correcciones para mantener la pauta al día.",
+        p2: "Para optimizar los tiempos de entrega, integré CapCut como herramienta clave para agilizar la edición de video frente a alternativas más lentas como Canva, logrando mantener el ritmo de contenido que exigía esta empresa.",
+        sectionImage: "/proyectos/arkenco/3-proyecto-miracle.webp",
+        boldText: "Este ritmo de trabajo tan intenso me permitió perfeccionar la eficiencia operativa, la gestión de entregas bajo presión y el manejo de múltiples requerimientos en paralelo. Pero sí, fue estresante.",
+        images: [
           "/proyectos/arkenco/3-proyecto-1-miracle.webp", "/proyectos/arkenco/3-proyecto-3-miracle.webp", "/proyectos/arkenco/3-proyecto-2-miracle.webp", "/proyectos/arkenco/3-proyecto-4-miracle.webp"
         ],
-        "videos": [
+        videos: [
           { "src": "/proyectos/arkenco/reels/influencer-claudio-miracle.mp4", "poster": "/proyectos/arkenco/reels/influencer-claudio-miracle.webp" }, 
           { "src": "/proyectos/arkenco/reels/como-llegar-miracle.mp4", "poster": "/proyectos/arkenco/reels/como-llegar-miracle.webp" }, 
           { "src": "/proyectos/arkenco/reels/marcaje-abdominal-miracle.mp4", "poster": "/proyectos/arkenco/reels/marcaje-abdominal-miracle.webp" }
         ]
       },
       {
-        "type": "graphic-gallery",
-        "title": "Decorawood",
-        "p1": "Clientes dinámicos y exigentes. Diseñar para ellos siempre fue divertido; más allá de los posts habituales, el proyecto trascendió lo digital cuando asumí el reto de diseñar las gráficas impresas para las puertas de vidrio de su tienda física, un ejercicio donde el diseño gráfico se volvió realidad.",
-        "p2": "Además, entre los archivos perdidos, descubrí una joyita inédita, un video divertido de las mascotas de La Botota, que por cosas de la agencia, nunca llegó a subirse oficialmente a sus redes. ¡Material exclusivo que por fin ve la luz!",
-        "sectionImage": "/proyectos/arkenco/3-proyecto-decorawood.webp",
-        "images": [
-          "/proyectos/arkenco/3-proyecto-1-decorawood.webp", "/proyectos/arkenco/3-proyecto-2-decorawood.webp", "/proyectos/arkenco/3-proyecto-3-decorawood.webp", "/proyectos/arkenco/3-proyecto-4-decorawood.webp",
+        type: "graphic-gallery",
+        title: "Decorawood",
+        p1: "Clientes dinámicos y con proyectos muy versátiles. Más allá de los posts habituales, el trabajo trascendió lo puramente digital cuando asumí el reto de diseñar las gráficas impresas para las puertas de vidrio de su tienda física, llevando el diseño gráfico a un formato de experiencia real.",
+        p2: "Además, entre los archivos del proyecto, rescaté una pieza inédita: un video junto a La Botota que no llegó a publicarse de forma oficial en su momento, por lo que se suma como material exclusivo de esta recopilación.",
+        sectionImage: "/proyectos/arkenco/3-proyecto-decorawood.webp",
+        images: [
+          "/proyectos/arkenco/3-proyecto-1-decorawood.webp", "/proyectos/arkenco/3-proyecto-2-decorawood.webp", "/proyectos/arkenco/3-proyecto-3-decorawood.webp", "/proyectos/arkenco/3-proyecto-4-decorawood.webp"
         ],
-        "videos": [
+        videos: [
           { "src": "/proyectos/arkenco/reels/carla-botota-decorawood.mp4", "poster": "/proyectos/arkenco/reels/carla-botota-decorawood.webp" }, 
           { "src": "/proyectos/arkenco/reels/botota-promocional-decorawood.mp4", "poster": "/proyectos/arkenco/reels/botota-promocional-decorawood.webp" }, 
           { "src": "/proyectos/arkenco/reels/botota-perritos-decorawood.mp4", "poster": "/proyectos/arkenco/reels/botota-perritos-decorawood.webp" }
         ]
       },
       {
-        "type": "row-paragraphs-with-image",
-        "title": "Otros Proyectos",
-        "p1": "En una agencia el ritmo nunca frena, y en el tintero quedaron múltiples marcas pasajeras y proyectos breves que alimentaron las grillas de contenido diario. De aquí destaco los logos que tuve realizar (forzosamente, yo jamás haría un logo porque sí, los odio) de DST Chile y el de Arkenco.",
-        "p2": "Aquí recopilo una muestra del volumen de producción. Piezas rápidas, funcionales y pensadas para resolver la presencia digital de diversos rubros sobre la marcha; hice lo que pude y di todo de mí para que quedara bien, a veces funcionaba, otras veces los clientes no estaban satisfechos. Pero así es la vida en una agencia.",
-        "image": "/proyectos/arkenco/3-proyectos-grid.webp", 
+        type: "row-paragraphs-with-image",
+        title: "Otros Proyectos",
+        p1: "El ritmo de una agencia implica atender múltiples empresas y requerimientos breves que alimentan las grillas de contenido diario. En esta sección se incluye parte de ese volumen de producción, abarcando desde logos hasta el desarrollo de piezas gráficas para diversos rubros comerciales.",
+        p2: "Una muestra del trabajo ágil orientado a resolver la presencia digital de los clientes sobre la marcha, manteniendo la coherencia visual y adaptándose rápidamente a distintas líneas gráficas.",
+        image: "/proyectos/arkenco/3-proyectos-grid.webp"
       },
       {
-        "type": "col-paragraphs-simple",
-        "title": "Detrás de escena: La realidad de agencia",
-        "p1": "Gestionar múltiples diseños simultáneos en el ecosistema de una agencia de marketing digital exige una capacidad de organización quirúrgica. Este periodo funcionó como una auténtica incubadora de rendimiento; me enseñó a dominar altos volúmenes de producción, optimizar flujos de trabajo bajo presión y consolidar una ética inquebrantable sobre el valor del tiempo profesional.",
-        "p2": "Si las piezas gráficas mantenían un estándar impecable, era porque la calidad la dictaba mi propio rigor visual, transformando cualquier fricción del entorno en un aprendizaje de blindaje profesional. En este contexto, quiero decir que jamás trabajen en una agencia de diseño. Gracias por leer.",
+        type: "col-paragraphs-simple",
+        title: "Conclusiones del periodo",
+        p1: "Gestionar múltiples cuentas simultáneas en el ecosistema de una agencia de marketing digital exige una sólida capacidad de organización y adaptación. Este periodo funcionó como una etapa clave de rendimiento que me permitió dominar altos volúmenes de producción, optimizar flujos de trabajo y estructurar una metodología de diseño versátil.",
+        p2: "Mantener un estándar visual elevado en cada entrega demostró la importancia del rigor técnico y estético frente a cualquier desafío operativo, pero no volvería a trabajar en una agencia de marketing nunca más."
       }
     ]
-  },
+  }
 
 
 };

@@ -9,7 +9,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, className = "" }: ProjectCardProps) {
   return (
     <Link 
-      href={project.link} 
+      href={project.slug} 
       className={`group relative block w-full aspect-4/5 rounded-2xl overflow-hidden shadow-lg ${className}`}
     >
       {/* Imagen de fondo con efectos */}
