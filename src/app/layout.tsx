@@ -4,8 +4,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ConstructionModal from "@/components/ConstructionModal";
 import CookieBanner from "@/components/CookieBanner";
+import CodeSignature from "@/components/CodeSignature";
 
 const PlusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -67,14 +67,15 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background">
+        
         <div className="min-h-screen bg-hero-gradient">
           <Navbar />
           <main className="w-full">
+          <CodeSignature />
             {children}
           </main>
         </div>
         <Footer />
-        <ConstructionModal />
         <CookieBanner />
         <GoogleAnalytics gaId="G-0VT04NJ21G" />
       </body>

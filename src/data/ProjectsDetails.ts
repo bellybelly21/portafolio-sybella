@@ -6,7 +6,9 @@ export interface Section {
   boldText?: string;
   image?: string;
   images?: string[];
+  sectionImage?: string;
   items?: string[];
+  videos?: { src: string; poster: string }[];
 }
 
 export interface ProjectDetail {
@@ -111,7 +113,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
     p1: "Pude haberme quedado en lo fácil y resolver el formulario de contacto con las herramientas nativas de Next. Pero quise demostrar de qué estoy hecha: monté una base de datos en MongoDB, la conecté a mi frontend mediante un servidor de Node.js con Express.",
     p2: "Deployar fue toda una odisea que me obligó a reestructurar y separar por completo las carpetas de frontend y backend. Hoy corre impecable con el backend en Railway y el frontend en Cloudflare Pages.",
     boldText: "¿El toque final? Integré Resend para automatizar una alerta a mi correo personal cada vez que entra una solicitud.",
-    // image: "/proyectos/2-wireframes.png"
+    image: "/proyectos/2-correo.webp"
   },
   {
     type: "row-paragraphs-with-image",
@@ -122,6 +124,80 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
   }
 
   ]
-  }
+  },
+
+  "graficas-rrss-arkenco":{
+    "title": "Recopilación de gráficas para redes sociales",
+    "categories": ["Diseño gráfico"],
+    "date": "Dic 2023 - Jul 2025",
+    "descripcion": "Durante mi tiempo en Arkenco, agencia de Marketing Digital, me encargué de la creación de contenido visual para las redes sociales de la empresa y los distintos clientes. Este trabajo implicó diseñar y producir una gran variedad de posts, carruseles y reels. Aquí presento una muestra del ecosistema gráfico que gestioné. Detrás de cada diseño hay una historia de recursos limitados, clientes exigentes y flujos de trabajo caóticos.",
+    "role": "Diseñadora gráfica y creadora de contenido visual.",
+    "mission": "Desarrollar material gráfico atractivo y coherente para los clientes de Arkenco.",
+    "mainImage": "/proyectos/3-preview-arkenco.webp",
+    "sections": [
+      {
+        "type": "graphic-gallery",
+        "title": "Clínica Puerta del Sol",
+        "p1": "El reto fue crear una identidad visual para una clínica médica a partir de recursos limitados. Trabajar con bancos de imágenes siempre es un desafío porque carecen de autenticidad y rara vez conectan de verdad con la audiencia local, pero había que ingeniárselas con lo que había.",
+        "p2": "Además del diseño de plantillas para posts y la maquetación de reels, a veces me tocaba asumir un rol que no me correspondía: salir a la calle, ir a la clínica y acompañar a grabar. No era mi actividad favorita ni la esencia de mi cargo, pero es un recuerdo de este lugar. De hecho, en algunos videos de cómo llegar a la clínica, aparece mi reflejo en la puerta de vidrio. Y por ahí hay una foto de mí haciendo de paciente.",
+        "images": [
+          "/proyectos/arkenco/3-proyecto-1.webp",
+          "/proyectos/arkenco/3-proyecto-2.webp",
+          "/proyectos/arkenco/3-proyecto-3.webp",
+          "/proyectos/arkenco/3-proyecto-4.webp"
+        ],
+        "videos": [
+          { "src": "/proyectos/arkenco/reels/dr-aldo-rimassa-ops.mp4", "poster": "/proyectos/arkenco/reels/dr-aldo-rimassa-ops.webp" },
+          { "src": "/proyectos/arkenco/reels/dr-jose-vergara-ops.mp4", "poster": "/proyectos/arkenco/reels/dr-jose-vergara-ops.webp" },
+          { "src": "/proyectos/arkenco/reels/uso-pantallas-ops.mp4", "poster": "/proyectos/arkenco/reels/uso-pantallas-ops.webp" }
+        ]
+      },
+      {
+        "type": "graphic-gallery",
+        "title": "Miracle Clinic",
+        "p1": "Una clínica estética con un nivel de exigencia altísimo: requerían dos reels semanales, entregas de material a contratiempo y rondas de correcciones continuas. Ahí adjunté un pantallazo de todos los videos que hice para ellos.",
+        "p2": "Aunque editar en CapCut me permitía resolver con agilidad frente a las limitaciones de otras herramientas, el volumen de trabajo superó con creces lo acordado en un principio.",
+        "sectionImage": "/proyectos/arkenco/3-proyecto-miracle.webp",
+        "boldText": "Esta experiencia fue el punto de inflexión que me enseñó a identificar los límites entre la colaboración flexible y la sobrecarga.",
+        "images": [
+          "/proyectos/arkenco/3-proyecto-1-miracle.webp", "/proyectos/arkenco/3-proyecto-3-miracle.webp", "/proyectos/arkenco/3-proyecto-2-miracle.webp", "/proyectos/arkenco/3-proyecto-4-miracle.webp"
+        ],
+        "videos": [
+          { "src": "/proyectos/arkenco/reels/influencer-claudio-miracle.mp4", "poster": "/proyectos/arkenco/reels/influencer-claudio-miracle.webp" }, 
+          { "src": "/proyectos/arkenco/reels/como-llegar-miracle.mp4", "poster": "/proyectos/arkenco/reels/como-llegar-miracle.webp" }, 
+          { "src": "/proyectos/arkenco/reels/marcaje-abdominal-miracle.mp4", "poster": "/proyectos/arkenco/reels/marcaje-abdominal-miracle.webp" }
+        ]
+      },
+      {
+        "type": "graphic-gallery",
+        "title": "Decorawood",
+        "p1": "Clientes dinámicos y exigentes. Diseñar para ellos siempre fue divertido; más allá de los posts habituales, el proyecto trascendió lo digital cuando asumí el reto de diseñar las gráficas impresas para las puertas de vidrio de su tienda física, un ejercicio donde el diseño gráfico se volvió realidad.",
+        "p2": "Además, entre los archivos perdidos, descubrí una joyita inédita, un video divertido de las mascotas de La Botota, que por cosas de la agencia, nunca llegó a subirse oficialmente a sus redes. ¡Material exclusivo que por fin ve la luz!",
+        "sectionImage": "/proyectos/arkenco/3-proyecto-decorawood.webp",
+        "images": [
+          "/proyectos/arkenco/3-proyecto-1-decorawood.webp", "/proyectos/arkenco/3-proyecto-2-decorawood.webp", "/proyectos/arkenco/3-proyecto-3-decorawood.webp", "/proyectos/arkenco/3-proyecto-4-decorawood.webp",
+        ],
+        "videos": [
+          { "src": "/proyectos/arkenco/reels/carla-botota-decorawood.mp4", "poster": "/proyectos/arkenco/reels/carla-botota-decorawood.webp" }, 
+          { "src": "/proyectos/arkenco/reels/botota-promocional-decorawood.mp4", "poster": "/proyectos/arkenco/reels/botota-promocional-decorawood.webp" }, 
+          { "src": "/proyectos/arkenco/reels/botota-perritos-decorawood.mp4", "poster": "/proyectos/arkenco/reels/botota-perritos-decorawood.webp" }
+        ]
+      },
+      {
+        "type": "row-paragraphs-with-image",
+        "title": "Otros Proyectos",
+        "p1": "En una agencia el ritmo nunca frena, y en el tintero quedaron múltiples marcas pasajeras y proyectos breves que alimentaron las grillas de contenido diario. De aquí destaco los logos que tuve realizar (forzosamente, yo jamás haría un logo porque sí, los odio) de DST Chile y el de Arkenco.",
+        "p2": "Aquí recopilo una muestra del volumen de producción. Piezas rápidas, funcionales y pensadas para resolver la presencia digital de diversos rubros sobre la marcha; hice lo que pude y di todo de mí para que quedara bien, a veces funcionaba, otras veces los clientes no estaban satisfechos. Pero así es la vida en una agencia.",
+        "image": "/proyectos/arkenco/3-proyectos-grid.webp", 
+      },
+      {
+        "type": "col-paragraphs-simple",
+        "title": "Detrás de escena: La realidad de agencia",
+        "p1": "Gestionar múltiples diseños simultáneos en el ecosistema de una agencia de marketing digital exige una capacidad de organización quirúrgica. Este periodo funcionó como una auténtica incubadora de rendimiento; me enseñó a dominar altos volúmenes de producción, optimizar flujos de trabajo bajo presión y consolidar una ética inquebrantable sobre el valor del tiempo profesional.",
+        "p2": "Si las piezas gráficas mantenían un estándar impecable, era porque la calidad la dictaba mi propio rigor visual, transformando cualquier fricción del entorno en un aprendizaje de blindaje profesional. En este contexto, quiero decir que jamás trabajen en una agencia de diseño. Gracias por leer.",
+      }
+    ]
+  },
+
 
 };

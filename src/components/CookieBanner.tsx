@@ -7,27 +7,15 @@ export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Función para verificar si debe mostrarse el banner
-    const checkConsentState = () => {
-      const hasSeenConstruction = localStorage.getItem("construction_modal_seen");
+    // Retrasar la verificación para proteger el LCP y no competir por recursos
+    const timer = setTimeout(() => {
       const cookieConsent = localStorage.getItem("cookie-consent");
-
-      if (hasSeenConstruction === "true" && !cookieConsent) {
+      if (!cookieConsent) {
         setShowBanner(true);
-      } else {
-        setShowBanner(false);
       }
-    };
+    }, 3000); // Aparece suavemente a los 3 segundos
 
-    // Revisar al cargar
-    checkConsentState();
-
-    // Escuchar el evento personalizado cuando se cierre el modal de construcción
-    window.addEventListener("constructionModalClosed", checkConsentState);
-
-    return () => {
-      window.removeEventListener("constructionModalClosed", checkConsentState);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   const handleConsent = (action: "accept" | "reject") => {

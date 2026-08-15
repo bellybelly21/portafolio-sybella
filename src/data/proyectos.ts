@@ -30,16 +30,16 @@ export interface Project {
         image: "/proyectos/2-preview-portafolio.webp", 
         link: "/proyectos/rediseno-portafolio-sybella" 
       },
-    //   {
-    //     id: 3,
-    //     title: "Recopilación de gráficas para redes sociales",
-    //     categories: ["Diseño gráfico"],
-    //     date: "Dic 2023 - Jul 2025",
-    //     tags: ["Diseño gráfico"],
-    //     logo: "/logo-empresa.png",
-    //     image: "/proyectos/3.jpg",
-    //     link: "/proyectos/graficas-rrss-arkenco"
-    //   },
+      {
+        id: 3,
+        title: "Recopilación de gráficas para redes sociales",
+        categories: ["Diseño gráfico"],
+        date: "Dic 2023 - Jul 2025",
+        tags: ["Diseño gráfico"],
+        logo: "/proyectos/3-logo-arkenco.png",
+        image: "/proyectos/3-preview-arkenco.webp",
+        link: "/proyectos/graficas-rrss-arkenco"
+      },
   
     //   {
     //     id: 4,
