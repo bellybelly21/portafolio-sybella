@@ -63,7 +63,6 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
             alt={proyecto.title} 
             fill
             sizes="(max-width: 1280px) 100vw, 33vw"
-            priority
             className="object-cover rounded-sm" 
           />
         </div>

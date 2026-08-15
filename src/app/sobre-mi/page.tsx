@@ -85,6 +85,8 @@ export const metadata: Metadata = {
             <img 
               src="/images/sobre-mi-foto.webp" 
               alt="Foto de perfil de Sybella Sandoval" 
+              loading="lazy"
+              decoding="async"
               className="w-full lg:w-67 h-auto lg:h-98.25 object-cover rounded-sm  pointer-events-none"
             />
           </div>

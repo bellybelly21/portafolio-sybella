@@ -28,6 +28,10 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Adobe Suite (Photoshop, Illustrator, Lightroom, InDesign, Premiere), CapCut, Figma, Canva.",
     whatIDoText: "Producción versátil de piezas digitales e impresas. Desde redes sociales, fotomontajes y videos/reels, hasta material corporativo como lanyards, cards de acceso, pendones, libros y autoadhesivos.",
     truthText: "Uso Figma para vectores y para hacer gráficas que podría hacer en Photoshop; es una herramienta que adoro por su versatilidad. Canva es mi mejor aliado para tender puentes con equipos de marketing cuando el flujo nativo de Adobe se complica. Los logos no son mi especialidad ni lo que más disfruto, pero puedo resolverlos cuando la ocasión lo exige.",
+    projectTitle: "Recopilación de gráficas para redes sociales",
+    projectDescription: "Una gran cantidad de material gráfico para Arkenco.",
+    projectImage: "/proyectos/3-preview-arkenco.webp",
+    projectSlug: "/proyectos/graficas-rrss-arkenco", 
   },
   {
     id: 2,

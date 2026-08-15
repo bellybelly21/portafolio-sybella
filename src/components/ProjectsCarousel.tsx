@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import ProjectCard from "@/components/ProjectCards";
 
 interface ProjectsCarouselProps {
@@ -12,20 +12,29 @@ export default function ProjectsCarousel({ proyectos }: ProjectsCarouselProps) {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
-  const checkScrollPosition = () => {
+  const checkScrollPosition = useCallback(() => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
       setShowLeftArrow(scrollLeft > 10);
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
     }
-  };
+  }, []);
 
   useEffect(() => {
     checkScrollPosition();
-    const handleResize = () => checkScrollPosition();
+    let timeoutId: NodeJS.Timeout;
+    
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(checkScrollPosition, 100); 
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [proyectos]);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, [checkScrollPosition, proyectos]);
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -49,7 +58,6 @@ export default function ProjectsCarousel({ proyectos }: ProjectsCarouselProps) {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
       </button>
 
-      {/* Contenedor de cards */}
       <div 
         ref={scrollContainerRef}
         onScroll={checkScrollPosition}
