@@ -61,7 +61,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
           "El Blog 'In-house': Necesitábamos SEO, pero no teníamos CMS externo. ¿La solución? Creé un sistema donde el contenido vivía en un JSON y se renderizaba mediante una única plantilla. Como los crawlers no leían el contenido dinámico, programé un script en JS que generaba páginas HTML estáticas por cada post. Resultado: Indexación perfecta, etiquetas SEO optimizadas y soporte para Open Graph (og:image) para que, cuando el contenido se compartiera en redes, se viera impecable."
         ],
         boldText: "Aquí mi mayor reto y mi mayor orgullo: el Blog",
-        images: ["/proyectos/inge/1-blog-1.jpg", "/proyectos/inge/1-blog-2.jpg"]
+        images: ["/proyectos/inge/1-blog-1.webp", "/proyectos/inge/1-blog-2.webp"]
       },
       {
         type: "col-paragraphs-simple",
@@ -226,7 +226,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
         title:"UX en acción",
         p1:"Uno de los ejes fundamentales del rediseño fue optimizar la conversión y la experiencia en el flujo crítico de agendamiento de horas. Para lograrlo, realicé un proceso exhaustivo de análisis y benchmarking de flujos de la competencia, adaptando las mejores prácticas a los estándares de UX necesarios para simplificar los pasos del paciente.",
         p2:"Aunque el desarrollo de código no formó parte de mi rol en este proyecto, aseguré que cada interfaz y wireframe entregado fuera impecable, claro y fácil de interpretar para la etapa de maquetación.",
-        images:["/proyectos/puertadelsol/2-mockup-1.jpg", "/proyectos/puertadelsol/2-mockup-2.jpg", "/proyectos/puertadelsol/2-mockup-3.jpg"]
+        images:["/proyectos/puertadelsol/2-mockup-1.webp", "/proyectos/puertadelsol/2-mockup-2.webp", "/proyectos/puertadelsol/2-mockup-3.webp"]
       },
       {
         "type": "col-paragraphs-with-image",
