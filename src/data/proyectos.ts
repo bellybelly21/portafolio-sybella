@@ -35,22 +35,22 @@ export interface Project {
         title: "Recopilación de gráficas para redes sociales",
         categories: ["Diseño gráfico"],
         date: "Dic 2023 - Jul 2025",
-        tags: ["Diseño gráfico"],
+        tags: ["Experiencia laboral","Diseño gráfico"],
         logo: "/proyectos/3-logo-arkenco.png",
         image: "/proyectos/3-preview-arkenco.webp",
         slug: "/proyectos/graficas-rrss-arkenco"
       },
   
-    //   {
-    //     id: 4,
-    //   title: "Rediseño web de Clínica Puerta del Sol",
-    //   categories: ["UX/UI"],
-    //   date: "Dic 2023 - Jul 2024",
-    //   tags: ["UX/UI"],
-    //   logo: "/logo-empresa.png",
-    //   image: "/proyectos/4.jpg",
-    //   slug: "/proyectos/rediseno-web-puerta-del-sol"
-    // },
+      {
+        id: 4,
+      title: "Rediseño web de Clínica Puerta del Sol",
+      categories: ["UX/UI"],
+      date: "Dic 2023 - Jul 2024",
+      tags: ["UX/UI"],
+      logo: "/proyectos/4-logo-puertadelsol.png",
+      image: "/proyectos/4-preview-puertadelsol.png",
+      slug: "/proyectos/rediseno-puerta-del-sol"
+    },
     // {
     //   id: 5,
     //   title:"Recopilación webs y landing pages",
