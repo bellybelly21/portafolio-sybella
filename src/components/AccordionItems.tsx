@@ -41,6 +41,10 @@ const profileItemsData: ProfileItem[] = [
     stackText: "Figma (mi hogar), Adobe XD, Framer, Hotjar, Miro, Maze.",
     whatIDoText: "Diseño de sitios web, landing pages y apps móviles. Y algo de espionaje a empresas de la competencia (más llamado benchmarking).",
     truthText: "Me obsesiona el pixel-perfect, las grillas y el uso correcto de auto-layout. Todo sitio que diseño lo veo como un producto: debe ser usable, amable y accesible (siempre chequeo contrastes). Aunque el UX puro no es mi fuerte, me guío por estándares web probados que aseguran que el diseño no solo se vea bien, sino que funcione como debe.",
+    projectTitle: "Rediseño web de Clínica Puerta del Sol",
+    projectDescription: "Rediseño completo para la Clínica Oftalmológica.",
+    projectImage: "/proyectos/4-preview-puertadelsol.webp",
+    projectSlug: "/proyectos/rediseno-puerta-del-sol", 
   },
   {
     id: 3,
@@ -52,7 +56,7 @@ const profileItemsData: ProfileItem[] = [
     truthText: "Soy la pesadilla del desarrollador que 'destruye' diseños. Como diseñadora, respeto el trabajo visual y me aseguro de que el resultado final sea fiel al original. Si trabajo con otros diseñadores, aplico ese mismo respeto al código. Domino React y el ecosistema moderno; si el proyecto lo pide, puedo aprender lo que sea sin problema.",
     projectTitle: "Redefinición del ecosistema digital de InGe!",
     projectDescription: "Este proyecto es grande pero tiene su base en Frontend.",
-    projectImage: "/proyectos/1-preview-inge.webp",
+    projectImage: "/proyectos/inge/1-final-1.webp",
     projectSlug: "/proyectos/redefinicion-inge", 
   },
   {
