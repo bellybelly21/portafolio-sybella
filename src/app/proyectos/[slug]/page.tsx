@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+import ImageModal from "@/components/ImageModal"; 
 import { proyectosDetalle, Section } from "@/data/ProjectsDetails";
 
 interface PageProps {
@@ -57,15 +57,14 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
         </div>
 
         {/* Columna de la Imagen Principal */}
-        <div className="relative w-full h-100 xl:h-125">
-          <Image 
-            src={proyecto.mainImage} 
-            alt={proyecto.title} 
-            fill
-            sizes="(max-width: 1280px) 100vw, 33vw"
-            className="object-cover rounded-sm" 
-          />
-        </div>
+        <ImageModal 
+          src={proyecto.mainImage} 
+          alt={proyecto.title} 
+          fill
+          sizes="(max-width: 1280px) 100vw, 33vw"
+          containerClassName="relative w-full h-87.5 md:h-100 xl:h-125"
+          className="object-cover rounded-sm object-top" 
+        />
       </section>
 
       <div className="space-y-20 md:space-y-32">
@@ -84,16 +83,14 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                     <p className="font-bold text-black text-[16px] md:text-[18px]">{section.boldText}</p>
                   )}
                   {section.image && (
-                    <div className="relative w-full h-87.5 md:h-180 mt-4">
-                      <Image 
-                        src={section.image} 
-                        alt={section.title} 
-                        fill
-                        sizes="100vw"
-                        loading="lazy"
-                        className="rounded-sm object-cover object-top" 
-                      />
-                    </div>
+                    <ImageModal 
+                      src={section.image} 
+                      alt={section.title} 
+                      fill
+                      sizes="70vw"
+                      containerClassName="relative w-full h-60 md:h-180 mt-4"
+                      className="rounded-sm object-cover object-top" 
+                    />
                   )}
                 </div>
               );
@@ -115,16 +112,14 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                     </div>
 
                     {section.image && (
-                      <div className="relative w-full h-87.5 xl:max-h-95">
-                        <Image 
-                          src={section.image} 
-                          alt={section.title} 
-                          fill
-                          sizes="(max-width: 1280px) 100vw, 50vw"
-                          loading="lazy"
-                          className="rounded-sm object-top xl:object-top object-cover" 
-                        />
-                      </div>
+                      <ImageModal 
+                        src={section.image} 
+                        alt={section.title} 
+                        fill
+                        sizes="(max-width: 1280px) 100vw, 50vw"
+                        containerClassName="relative w-full h-80 md:h-87.5 xl:max-h-95"
+                        className="rounded-sm object-cover object-top xl:object-top" 
+                      />
                     )}
                   </div>
                 </div>
@@ -137,19 +132,21 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                   <div className="flex flex-col gap-4 w-full text-gray text-[16px] md:text-[18px]">
                     <p>{section.p1}</p>
                     <p>{section.p2}</p>
+                    {section.boldText && (
+                    <p className="font-bold text-black text-[16px] md:text-[18px]">{section.boldText}</p>
+                  )}
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                     {section.images?.map((img: string, i: number) => (
-                      <div key={i} className="relative w-full h-75 md:h-100">
-                        <Image 
-                          src={img} 
-                          alt="" 
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          loading="lazy"
-                          className="rounded-sm object-cover object-top" 
-                        />
-                      </div>
+                      <ImageModal 
+                        key={i}
+                        src={img} 
+                        alt="" 
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        containerClassName="relative w-full h-80 md:h-100"
+                        className="rounded-sm object-cover object-top" 
+                      />
                     ))}
                   </div>
                 </div>
@@ -165,6 +162,22 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
+
+                  {section.images && section.images.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                      {section.images.map((img: string, i: number) => (
+                        <ImageModal 
+                          key={i}
+                          src={img} 
+                          alt="" 
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          containerClassName="relative w-full h-80 md:h-100"
+                          className="rounded-sm object-cover object-top" 
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
 
@@ -187,19 +200,19 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                   <div className="flex flex-col gap-4 w-full text-gray text-[16px] md:text-[18px]">
                     <p>{section.p1}</p>
                     <p>{section.p2}</p>
+                    {section.boldText && (<p className="font-bold text-black text-[16px] md:text-[18px]">{section.boldText}</p>)}
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
                     {section.images?.map((img: string, i: number) => (
-                      <div key={i} className="relative w-full h-100 max-h-125">
-                        <Image 
-                          src={img} 
-                          alt="" 
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          loading="lazy"
-                          className="rounded-sm object-cover object-top" 
-                        />
-                      </div>
+                      <ImageModal 
+                        key={i}
+                        src={img} 
+                        alt="" 
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        containerClassName="relative w-full h-80 md:h-100 max-h-125"
+                        className="rounded-sm object-cover object-top" 
+                      />
                     ))}
                   </div>
                 </div>
@@ -217,38 +230,36 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                     </div>
 
                     {section.sectionImage && (
-                      <div className="relative w-full h-87.5 max-h-95">
-                        <Image 
-                          src={section.sectionImage} 
-                          alt={section.title} 
-                          fill
-                          sizes="(max-width: 1280px) 100vw, 50vw"
-                          loading="lazy"
-                          className="rounded-sm object-cover border border-gray-200" 
-                        />
-                      </div>
+                      <ImageModal 
+                        src={section.sectionImage} 
+                        alt={section.title} 
+                        fill
+                        sizes="(max-width: 1280px) 100vw, 50vw"
+                        containerClassName="relative w-full h-80 md:h-87.5 max-h-95"
+                        className="rounded-sm object-cover border border-gray-200" 
+                      />
                     )}
                   </div>
 
                   {section.images && section.images.length > 0 && (
-  <div className="flex flex-col gap-4 mt-4">
-    <h3 className="text-black font-bold text-xl md:text-2xl">Posts</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-      {section.images.map((img: string, i: number) => (
-        <div key={i} className="relative w-full aspect-4/5 overflow-hidden rounded-sm bg-gray-100 border border-gray-200">
-          <Image 
-            src={img} 
-            alt={`${section.title} - ${i}`} 
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-            loading="lazy"
-            className="object-cover hover:scale-102 transition-transform duration-300" 
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+                    <div className="flex flex-col gap-4 mt-4">
+                      <h3 className="text-black font-bold text-xl md:text-2xl">Posts</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {section.images.map((img: string, i: number) => (
+                          <div key={i} className="relative w-full aspect-4/5 overflow-hidden rounded-sm bg-gray-100 border border-gray-200">
+                            <ImageModal 
+                              src={img} 
+                              alt={`${section.title} - ${i}`} 
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+                              containerClassName="relative w-full h-full"
+                              className="object-cover hover:scale-102 transition-transform duration-300" 
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {section.videos && section.videos.length > 0 && (
                     <div className="flex flex-col gap-4 mt-4">

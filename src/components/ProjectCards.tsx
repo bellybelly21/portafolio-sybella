@@ -29,7 +29,7 @@ export default function ProjectCard({ project, className = "" }: ProjectCardProp
       {/* Contenido */}
       <div className="absolute bottom-0 left-0 p-8 flex flex-col justify-end h-full z-10 w-full">
         {project.logo && (
-          <img src={project.logo} alt="Logo empresa" className="max-h-10.75 w-auto mb-3 object-contain self-start contrast-200" />
+          <img src={project.logo} alt="Logo empresa" className="max-h-10.75 w-auto mb-3 object-contain self-start" />
         )}
         <h3 className="text-white font-bold text-[clamp(1.25rem,2vw,1.5rem)] mb-2">
           {project.title}

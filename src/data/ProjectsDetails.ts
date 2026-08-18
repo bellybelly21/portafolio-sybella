@@ -32,7 +32,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
     descripcion: "Cuando llegué a InGe, la presencia digital era, en el mejor de los casos, fragmentada. Me encontré con una empresa que tenía diseños antiguos desperdigados en distintos dominios, una identidad visual que no transmitía la seriedad del sector y una infraestructura que, técnicamente, estaba pidiendo a gritos una renovación total.",
     role: "Diseñadora gráfica UX/UI, desarrolladora Frontend, entre otros.",
     mission: "Unificar, profesionalizar y escalar una plataforma olvidada.",
-    mainImage: "/proyectos/1-preview-inge.webp",
+    mainImage: "/proyectos/inge/1-final-1.webp",
     sections: [
       {
         type: "row-paragraphs-with-image",
@@ -48,7 +48,6 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
         p1: "Llegué a un equipo en transición. Ante la salida del Gerente de TI y un desarrollador, el equipo quedó reducido, enfrentando un caos técnico. Fue ahí donde me tocó ser, junto con el único desarrollador que quedó, el equipo que enfrentó el desafío contra el mundo. Debía implementar el nuevo sitio en React, TypeScript y Tailwind (tecnologías que, en ese momento, eran un reto masivo para mí).",
         p2: "Decidí que el orden era innegociable. Construí un Design System completo desde Figma (títulos, colores, componentes, estados) y apliqué la metodología de Atomic Design para estructurar el código. Fue un proceso de meses donde el rigor técnico fue mi mejor aliado para no perder el foco.",
         boldText: "NOTA: no puedo subir evidencias de esto.",
-        images: ["/proyectos/inge/1-blog-1.webp", "/proyectos/inge/1-blog-2.webp"]
       },
       {
         type: "col-paragraphs-with-list",
@@ -75,6 +74,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
         title: "Resultados finales",
         p1: "Cuando el sitio público estuvo listo, hice el diseño del sitio privado. Craneé los flujos más complejos, especialmente el de cotización y compra de garantías, siempre bajo la premisa: debe ser mejor que el resto. Mis últimos meses cerraron el círculo: mejoramos la comunicación digital gestionando calendarios de contenido, mails automatizados (Mailchimp/Sendgrid) y optimizando la imagen corporativa.",
         p2: "InGe fue mi primera oportunidad para hacer desarrollo web. Sin embargo, mi evolución me pedía más código, más desafío técnico y menos tareas monótonas de diseño gráfico. Renuncié porque el aprendizaje ya no estaba en la zona de confort. Me llevo la gratitud de un equipo increíble y la certeza de que dejé a InGe con una plataforma profesional, las redes sociales consistentes, un perfil que da confianza a los clientes.",
+        boldText:"Puedes revisar el sitio en producción en: www.inge.cl",
         images: ["/proyectos/inge/1-final-1.webp", "/proyectos/inge/1-final-2.webp", "/proyectos/inge/1-final-3.webp"] 
     }]
 },
@@ -86,7 +86,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
     descripcion: "Evolución integral de mi marca personal. Un portafolio minimalista, modular y de alto rendimiento, construido para reflejar mi transición hacia el desarrollo fullstack, integrando estrategias de SEO avanzado y optimización de experiencia de usuario.",
     role: "Diseñadora UX/UI y Desarrolladora Fullstack.",
     mission: "Construir una plataforma Fullstack MERN profesional.",
-    mainImage: "/proyectos/2-preview-portafolio.webp",
+    mainImage: "/proyectos/sybella/preview-portafolio.webp",
     sections: [{
       type: "row-paragraphs-with-image",
       title: "La evolución de las especies",
@@ -211,7 +211,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
     descripcion: "Realicé el rediseño completo del sitio web, transformando su interfaz antigua en una propuesta moderna, minimalista y funcional. El proyecto incluyó la creación de un diseño actualizado para todas las páginas del sitio, desde la sección de agendamiento con un flujo de múltiples pasos, hasta plantillas específicas para destacar procedimientos. El enfoque estuvo en mejorar la experiencia del usuario, conservar la información clave del sitio original y garantizar una estructura optimizada. Aunque el desarrollo web no formó parte de mi rol, aseguré que cada diseño fuera claro, accesible y listo para producción.",
     role: "Diseñadora UX/UI, a veces Copywriter.",
     mission: "Modernizar la plataforma digital para mejorar la experiencia del usuario y la navegación.",
-    mainImage: "/proyectos/4-preview-puertadelsol.png",
+    mainImage: "/proyectos/puertadelsol/4-preview-puertadelsol.webp",
     sections: [
       {
         type: "col-paragraphs-with-image",

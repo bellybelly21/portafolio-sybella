@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // Proyectos dinámicos
-  const projectSlugs = ['redefinicion-inge'];
+  const projectSlugs = ['redefinicion-inge', 'rediseno-portafolio-sybella', 'graficas-rrss-arkenco', 'rediseno-puerta-del-sol'];
   const projectPages = projectSlugs.map((slug) => ({
     url: `${baseUrl}/proyectos/${slug}`,
     lastModified: new Date(),

@@ -17,7 +17,7 @@ export interface Project {
         date: "Mar 2025 - Jul 2026", 
         tags: ["Experiencia laboral", "Frontend"], 
         logo: "/proyectos/1-logo-inge.png", 
-        image: "/proyectos/1-preview-inge.webp", 
+        image: "/proyectos/inge/1-final-1.webp", 
         slug: "/proyectos/redefinicion-inge" 
       },
       { 
@@ -48,7 +48,7 @@ export interface Project {
       date: "Dic 2023 - Jul 2024",
       tags: ["UX/UI"],
       logo: "/proyectos/4-logo-puertadelsol.png",
-      image: "/proyectos/4-preview-puertadelsol.png",
+      image: "/proyectos/4-preview-puertadelsol.webp",
       slug: "/proyectos/rediseno-puerta-del-sol"
     },
     // {
