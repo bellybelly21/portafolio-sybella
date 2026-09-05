@@ -53,9 +53,8 @@ export default function ContactClient() {
 
     try {
       const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'contact_form' });
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
-      const res = await fetch(`${apiUrl}/api/contact`, {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, token }),

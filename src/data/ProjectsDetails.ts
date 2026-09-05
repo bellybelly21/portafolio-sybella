@@ -85,7 +85,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
     date: "Jul - Ago 2026",
     descripcion: "Evolución integral de mi marca personal. Un portafolio minimalista, modular y de alto rendimiento, construido para reflejar mi transición hacia el desarrollo fullstack, integrando estrategias de SEO avanzado y optimización de experiencia de usuario.",
     role: "Diseñadora UX/UI y Desarrolladora Fullstack.",
-    mission: "Construir una plataforma Fullstack MERN profesional.",
+    mission: "Construir una plataforma Fullstack moderna integrada directamente en Next.js.",
     mainImage: "/proyectos/sybella/preview-portafolio.webp",
     sections: [{
       type: "row-paragraphs-with-image",
@@ -113,8 +113,8 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
   {
     type: "col-paragraphs-with-image",
     title: "Matando una mosca con una escopeta",
-    p1: "Pude haberme quedado en lo fácil y resolver el formulario de contacto con las herramientas nativas de Next. Pero quise demostrar de qué estoy hecha: monté una base de datos en MongoDB, la conecté a mi frontend mediante un servidor de Node.js con Express.",
-    p2: "Deployar fue toda una odisea que me obligó a reestructurar y separar por completo las carpetas de frontend y backend. Hoy corre impecable con el backend en Railway y el frontend en Cloudflare Pages.",
+    p1: "Pude haberme quedado en lo básico con las herramientas predeterminadas, pero quise demostrar de qué estoy hecha: integré una base de datos en MongoDB y configuré validaciones avanzadas con Google reCAPTCHA v3.",
+    p2: "Aunque inicialmente contemplé un backend separado en Node.js y Express, optimicé la arquitectura migrando toda la lógica del servidor directamente a las Route Handlers de Next.js. Adiós costos innecesarios de hosting externo; ahora todo corre unificado, seguro y de alto rendimiento.",
     boldText: "¿El toque final? Integré Resend para automatizar una alerta a mi correo personal cada vez que entra una solicitud.",
     image: "/proyectos/sybella/2-correo.webp"
   },
