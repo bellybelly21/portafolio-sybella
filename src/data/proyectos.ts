@@ -33,7 +33,7 @@ export interface Project {
       {
         id: 3,
         title: "Recopilación de gráficas para redes sociales",
-        categories: ["Diseño gráfico"],
+        categories: ["Diseño gráfico", "Experiencia laboral"],
         date: "Dic 2023 - Jul 2025",
         tags: ["Experiencia laboral","Diseño gráfico"],
         logo: "/proyectos/3-logo-arkenco.png",
@@ -51,16 +51,16 @@ export interface Project {
       image: "/proyectos/4-preview-puertadelsol.webp",
       slug: "/proyectos/rediseno-puerta-del-sol"
     },
-    // {
-    //   id: 5,
-    //   title:"Recopilación webs y landing pages",
-    //   categories: ["UX/UI"],
-    //   date: "Ene 2024 - Jul 2025",
-    //   tags: ["UX/UI"],
-    //   logo: "/logo-empresa.png",
-    //   image: "/proyectos/5.jpg",
-    //   slug: "/proyectos/recopilacion-webs-arkenco"
-    // },
+    {
+      id: 5,
+      title:"Recopilación webs y landing pages",
+      categories: ["UX/UI", "Frontend"],
+      date: "Dic 2023 - Jul 2025",
+      tags: ["UX/UI", "Frontend"],
+      logo: "/proyectos/3-logo-arkenco.png",
+      image: "/proyectos/5-preview-arkenco.webp",
+      slug: "/proyectos/recopilacion-webs-arkenco"
+    },
     // {
     //   id: 6,
     //   title: "Rediseño Landing Macrodent",

@@ -132,7 +132,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
   "graficas-rrss-arkenco":{
     title: "Recopilación de gráficas para redes sociales",
     slug: "/proyectos/graficas-rrss-arkenco",
-    categories: ["Diseño gráfico", "Experiencia laboral"],
+    categories: ["Experiencia laboral", "Diseño gráfico"],
     date: "Dic 2023 - Jul 2025",
     descripcion: "Durante mi tiempo en Arkenco, agencia de Marketing Digital, me encargué de la creación de contenido visual para las redes sociales de la empresa y los distintos clientes. Este trabajo implicó diseñar y producir una gran variedad de posts, carruseles y reels. Aquí presento una muestra del ecosistema gráfico que gestioné, enfocado en resolver requerimientos diversos bajo un flujo constante de producción.",
     role: "Diseñadora gráfica y creadora de contenido visual.",
@@ -176,7 +176,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
         type: "graphic-gallery",
         title: "Decorawood",
         p1: "Clientes dinámicos y con proyectos muy versátiles. Más allá de los posts habituales, el trabajo trascendió lo puramente digital cuando asumí el reto de diseñar las gráficas impresas para las puertas de vidrio de su tienda física, llevando el diseño gráfico a un formato de experiencia real.",
-        p2: "Además, entre los archivos del proyecto, rescaté una pieza inédita: un video junto a La Botota que no llegó a publicarse de forma oficial en su momento, por lo que se suma como material exclusivo de esta recopilación.",
+        p2: "Con ellos tuve que editar mucho en Capcut. Y entre los archivos del proyecto, rescaté una pieza inédita: un video junto a La Botota que no llegó a publicarse de forma oficial en su momento, por lo que se suma como material exclusivo de esta recopilación (es el tercer video).",
         sectionImage: "/proyectos/arkenco/3-proyecto-decorawood.webp",
         images: [
           "/proyectos/arkenco/3-proyecto-1-decorawood.webp", "/proyectos/arkenco/3-proyecto-2-decorawood.webp", "/proyectos/arkenco/3-proyecto-3-decorawood.webp", "/proyectos/arkenco/3-proyecto-4-decorawood.webp"
@@ -231,7 +231,7 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
       {
         "type": "col-paragraphs-with-image",
         "title": "Iteración real y cocreación",
-        "p1": "El proceso visual fue profundamente iterativo, especialmente en el diseño del banner principal. La propuesta inicial —a pesar de contar con un sólido criterio técnico— no convenció al cliente en la primera ronda, lo que derivó en un ejercicio de cocreación en tiempo real para integrar sus observaciones",
+        "p1": "El proceso visual fue profundamente iterativo, especialmente en el diseño del banner principal. La propuesta inicial —a pesar de contar con un sólido criterio técnico— no convenció al cliente en la primera ronda, lo que derivó en un ejercicio de cocreación en tiempo real para integrar sus observaciones.",
         "p2": "Lejos de ser un contratiempo, esta experiencia dejó una valiosa lección de madurez profesional: aprender a no casarse con una primera versión y mantener siempre la flexibilidad para transformar aquellos elementos que dábamos por definitivos en busca del equilibrio perfecto entre estética y funcionalidad.",
         "image": "/proyectos/puertadelsol/3-iteracion.webp"
       },
@@ -249,7 +249,83 @@ export const proyectosDetalle: Record<string, ProjectDetail> = {
       }
 
     ]
-  }
+  },
 
-
+  "recopilacion-webs-arkenco": {
+      slug: "/proyectos/recopilacion-webs-arkenco",
+      title: "Sitios Web & Landing Pages hechas en Arkenco",
+      categories: ["UI/UX", "Frontend", "Diseño gráfico"],
+      date: "Dic 2023 - Jul 2025",
+      descripcion: "Durante mi paso por Arkenco me tocó estructurar, diseñar y a veces hasta desarrollar de todo: desde sitios corporativos complejos hasta landings comerciales a contratiempo. Aquí recopilo esos proyectos web donde traté de poner orden, criterio visual y buena arquitectura de información, incluso cuando el cliente se bajaba a último minuto.",
+      role: "Diseñadora UI/UX, maquetadora web y redactora de contenidos.",
+      mission: "Construir identidades digitales y experiencias reales.",
+      mainImage: "/proyectos/5-preview-arkenco.webp",
+      sections: [
+        {
+          type: "col-paragraphs-triple",
+          title: "Neheda: Viajes exclusivos a la India",
+          p1: "Desarrollé este sitio web completo para reflejar la riqueza visual y cultural de los viajes grupales a la India. Fue un proceso bien cercano con el cliente para asegurar una identidad digital que realmente le hiciera justicia a la experiencia del servicio, me enviaron muchísimas fotos de la India y debí seleccionar las mejores, sin duda un país muy bonito.",
+          p2: "Entre los retos técnicos y de tiempo, el resultado final quedó bastante fiel al diseño original, logrando equilibrar la sobriedad con el atractivo visual de sus rutas. Advierto que como ha pasado el tiempo, han cambiado cosas en la web en producción.",
+          boldText: "Rol: Diseñadora UI/UX y maquetación web (WordPress) | Cliente: Agencia Neheda (viajesneheda.cl)",
+          images: [
+            "/proyectos/arkenco/neheda-home.webp",
+            "/proyectos/arkenco/neheda-tours.webp",
+            "/proyectos/arkenco/neheda-contacto.webp"
+          ]
+        },
+        {
+          type: "col-paragraphs-triple",
+          title: "Davinco: Soluciones de software industrial",
+          p1: "Armé una propuesta integral de 10 pantallas con versión desktop, tablet y mobile; para renovar la imagen digital de esta empresa que representa softwares de clase mundial como AVEVA o Auvesy-MDT. Reemplacé la información anterior, mejoré textos y añadí imágenes que capturan la atención con un diseño sobrio y profesional.",
+          p2: "Al final, por razones ajenas a mí, la propuesta no pudo llevarse a producción. Es de esos proyectos donde uno piensa que se perdió todo el esfuerzo invertido, pero decidí rescatarlo acá porque el nivel del diseño lo merece y no quería que quedara en el baúl de los recuerdos.",
+          boldText: "Rol: Diseñadora UX/UI | Cliente: Davinco",
+          images: [
+            "/proyectos/arkenco/davinco-home.webp",
+            "/proyectos/arkenco/davinco-softwares.webp",
+            "/proyectos/arkenco/davinco-aveva.webp"
+          ]
+        },
+        {
+          type: "col-paragraphs-triple",
+          title: "DSTChile: Partner tecnológico y desarrollo",
+          p1: "Me tocó diseñar toda la línea gráfica, la interfaz web y hasta el nuevo logotipo en Figma para esta consultora de software. Aposté por una estética limpia con harto blanco que comunica con solidez su trayectoria como partner tecnológico desde 2010.",
+          p2: "Un trabajo enfocado enteramente en la conceptualización visual y la experiencia de usuario para su plataforma corporativa. Aunque al momento de diseñar este sitio, aún no tenían listos los contenidos así que por eso mucho aparece con texto de prueba y lorem ipsum, pero la idea era que el diseño fuera lo más limpio y profesional posible.",
+          boldText: "Rol: Diseñadora UX/UI y creadora de identidad | Cliente: DST Chile (dstchile.cl)",
+          images: [
+            "/proyectos/arkenco/dst-home.webp",
+            "/proyectos/arkenco/dst-servicios.webp",
+            "/proyectos/arkenco/dst-portafolio.webp"
+          ]
+        },
+        {
+          type: "col-paragraphs-triple",
+          title: "Clínica Oftalmológica Puerta del Sol",
+          p1: "Un rediseño gigante de más de 20 pantallas y algunas landings para modernizar la experiencia digital de la clínica. Me tocó reorganizar contenidos desde cero, redactar copys y solucionar temas de contraste con su identidad y su icónico color amarillo corporativo.",
+          p2: "Fue un proceso súper iterativo donde optimizamos flujos críticos como el agendamiento de horas. Recuerdo haber estado hasta en la madrugada diseñando este proyecto, y en unas semanas lo dejé casi terminado (pero ese no era el fin, porque siempre hay cosas que cambiar). Si quieres ver el resultado navegando en vivo, está disponible en puertadelsol.cl, y en este portafolio puedes encontrar el proceso de diseño y los mockups finales.",
+          boldText: "Rol: Diseñadora UX/UI y redactora de contenidos | Cliente: Clínica Puerta del Sol (puertadelsol.cl)",
+          images: [
+            "/proyectos/puertadelsol/4-preview-puertadelsol.webp",
+            "/proyectos/arkenco/puertadelsol-especialidad.webp",
+            "/proyectos/arkenco/puertadelsol-agendar.webp"
+          ]
+        },
+        {
+          type: "col-paragraphs-triple",
+          title: "Landing Pages Comerciales",
+          p1: "Aquí reuní tres landings que nacieron bajo la clásica dinámica del 'Sybella, hazte unas páginas para este cliente, empieza ya'. Incluye a Vulcamóvil El Yolito (con su logo hecho de manera rudimentaria por mí), Rivu Contact Center (un proyecto rápido que al final no vio la luz) y la campaña de Davinco para Schneider Electric.",
+          p2: "Muchos de estos encargos express terminaban congelados porque el cliente no continuaba, lo que a veces se siente como un despropósito al tiempo invertido. Pero de todo se aprende, y visualmente estas piezas muestran versatilidad para resolver desde servicios locales hasta productos industriales.",
+          images: [
+            "/proyectos/arkenco/vulcamovil-landing.webp",
+            "/proyectos/arkenco/rivu-landing.webp",
+            "/proyectos/arkenco/davinco-landing.webp"
+          ]
+        },
+        {
+          type: "col-paragraphs-simple",
+          title: "Conclusiones al final",
+          p1: "Diseñar sitios web y landings bajo la presión de un 'hazte esto para ayer' enseña a diseñar rápido, a resolver a contrarreloj y a defender el criterio visual frente a briefs a veces improvisados. Sin embargo, también deja el desgaste inevitable de ver cómo horas de investigación, maquetación y diseño detallado se evaporan porque el cliente decide no continuar o el proyecto se congela indefinidamente en el baúl.",
+          p2: "Hacer UI/UX en una agencia de marketing te obliga a convertirte en una navaja suiza: investigas, diseñas, redactas copys y peleas contra los tiempos de producción. El aprendizaje técnico y la versatilidad que gané son invaluables, pero confirmar que gran parte del esfuerzo intelectual se pierda por decisiones ajenas al diseño te deja claro que el modelo de agencia, al menos para este tipo de procesos profundos, simplemente no funciona. Gracias por leer."
+        }
+      ]
+    }
 };
